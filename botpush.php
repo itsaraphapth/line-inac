@@ -43,7 +43,7 @@
       $events = json_decode($content, true);
   
       // Validate parsed JSON data
-      if (!isset($events['events'])) {
+      if (!is_null($events['events'])) {
         foreach ($events['events'] as $event) {
           if($event['type'] == "message" && isset($event['message']['text'])){
   
