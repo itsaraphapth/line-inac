@@ -24,7 +24,7 @@ if($message == "ขอราคา"){
 				"contents" => [
 				[
 					"type" => "text",
-					"text" => "Purchase",
+					"text" => "บอลติดหนี้",
 					"size" => "lg",
 					"align" => "start",
 					"weight" => "bold",
@@ -52,7 +52,7 @@ if($message == "ขอราคา"){
 				],
 				[
 					"type" => "text",
-					"text" => "Payment complete.",
+					"text" => "กรุณาจ่าย.",
 					"margin" => "lg",
 					"size" => "lg",
 					"color" => "#000000"
