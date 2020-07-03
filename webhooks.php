@@ -170,14 +170,6 @@ if($message == "ขอราคา"){
 		"originalContentUrl"=> "https://i.pinimg.com/originals/cc/22/d1/cc22d10d9096e70fe3dbe3be2630182b.jpg",
 		"previewImageUrl"=> "https://i.pinimg.com/originals/cc/22/d1/cc22d10d9096e70fe3dbe3be2630182b.jpg"
 	];
-
-
-
-
-
-
-
-
 }elseif($message == "ซอยข๋อยแหน่"){
 	$json = [
 		"type" => "text",
