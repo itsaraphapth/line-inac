@@ -20,16 +20,17 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			if($event['message']['text'] == 'ซอยข๋อยแหน่'){
-				$messages = [
+				$messages = [{
+					'type' => 'text',
+					'text' => "อิหยัง"
+				},{
+
 					// 'type' => 'text',
 					// 'text' => $text
 					'type' => "sticker",
 					'packageId' => "11537",
 					'stickerId' => "52002763"
-				],[
-					'type' => 'text',
-					'text' => "อิหยัง"
-				];
+				}];
 			}elseif($event['message']['text'] == 'ขอไอดี'){
 				$messages = [
 					'type' => 'text',
