@@ -1,12 +1,10 @@
 <?php
     $accessToken = "82RJmA6R8Us7FXuVhejH4foQ9mEwGWdm07S4MUMB3Lf5mANVg01RzLnVIQbeLyGly6AF1Zm1LjUo1XAk1I4fJKT+qRgUwONfQtwN+KxohE+prow+FC7B/JDmctO55d2I7pn2o0lgcLidPVgZr8g0vgdB04t89/1O/w1cDnyilFU=";//copy Channel access token ตอนที่ตั้งค่ามาใส่
-    
+    $POST_HEADER = array('Content-Type: application/json', 'Authorization: Bearer ' . $accessToken);
+
     $request = file_get_contents('php://input');
     $request_array  = json_decode($content, true);
-    
-    $arrayHeader = array();
-    $arrayHeader[] = "Content-Type: application/json";
-    $arrayHeader[] = "Authorization: Bearer {$accessToken}";
+ 
     
 	$request_array = json_decode($request, true);   // Decode JSON to Array
 
