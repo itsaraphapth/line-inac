@@ -22,7 +22,7 @@
     $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($token);
     $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $secret]);
   
-    if(isset($_POST['to']) && trim($_POST['to']) != '' && isset($_POST['text']) && trim($_POST['text']) != ''){
+    if( isset($_POST['text']) && trim($_POST['text']) != ''){
   
       // check for send message only
       $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("sss");
