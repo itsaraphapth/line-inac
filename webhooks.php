@@ -16,17 +16,17 @@ if (!is_null($events['events'])) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
-			// $text = $event['source']['userId'];
+			$text = $event['source']['groupId'];
 
-			if(isset($event['source']['userId']){
-				$text = $event['source']['userId'];
-			 }
-			 else if(isset($event['source']['groupId'])){
-				$text = $event['source']['groupId'];
-			 }
-			 else if(isset($event['source']['room'])){
-				$text = $event['source']['room'];
-			 }
+			// if(isset($event['source']['userId']){
+			// 	$text = $event['source']['userId'];
+			//  }
+			//  else if(isset($event['source']['groupId'])){
+			// 	$text = $event['source']['groupId'];
+			//  }
+			//  else if(isset($event['source']['room'])){
+			// 	$text = $event['source']['room'];
+			//  }
 
 			// Get replyToken
 			$replyToken = $event['replyToken'];
