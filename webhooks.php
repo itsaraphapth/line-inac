@@ -35,7 +35,14 @@ if (!is_null($events['events'])) {
 					// 'packageId' => "11537",
 					// 'stickerId' => "52002763"
 				];
-			
+			}elseif($event['message']['text'] == 'ถามหน่อย'){
+				$messages = [
+					'type' => 'text',
+					'text' => "อะไรหรอ??"
+					// 'type' => "sticker",
+					// 'packageId' => "11537",
+					// 'stickerId' => "52002763"
+				];
 			}else{
 				// $messages = [
 				// 	'type' => 'text',
