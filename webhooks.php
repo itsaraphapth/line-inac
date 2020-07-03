@@ -180,7 +180,9 @@ var_export($message);
 
         $data = [
             'replyToken' => $reply_token,
-            'messages' => json_encode($request_array)]
+            'messages' => [
+				['type' => 'text', 
+				 'text' => json_encode($request_array)]
         ];
 
         print_r($data);
