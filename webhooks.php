@@ -180,25 +180,14 @@ if($message == "ขอราคา"){
 
 }elseif($message == "ซอยข๋อยแหน่"){
 	$json = [
-		[
-			"type" => "text",
-			"text" => "อิหยังหวะ"
-		],[
-			"type" => "sticker",
-			"packageId" => "11537",
-			"packageId" => "52002763"
-		]
+		"type" => "text",
+		"text" => "อิหยังหวะ"
 	];
 }elseif($message == "ถามหน่อย"){
 	$json = [
-		[
-			"type" => "text",
-			"text" => "ว่ามาติหละ"
-		],[
-			"type" => "sticker",
-			"packageId" => "11537",
-			"packageId" => "52002749"
-		]
+		"type" => "sticker",
+		"packageId" => "11537",
+		"packageId" => "52002749"
 	];
 }else{
 
