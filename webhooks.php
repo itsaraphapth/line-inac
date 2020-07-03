@@ -11,7 +11,7 @@ $POST_HEADER = array('Content-Type: application/json', 'Authorization: Bearer ' 
 $request = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($request, true);   // Decode JSON to Array
 $message = $request_array['events'][0]['message']['text'];
-if($message == "สวัสดี"){
+if($message == "ขอราคา"){
 	$json = [
 		"type" => "flex",
 		"altText" => "Hello Flex Message",
@@ -130,7 +130,7 @@ if($message == "สวัสดี"){
 			]
 		]
 	];
-}elseif($message == "ฝันดี"){
+}elseif($message == "อยากกินซูชิ"){
 	$json = [
 		"type"=> "text", 
 		"text"=> "Select your favorite food category or send me your location!",
@@ -164,12 +164,14 @@ if($message == "สวัสดี"){
 		  ]
 		]
 	];
-}else{
+}elseif($message == "บอลไม่สวย"{
 	$json = [
 		"type"=> "image",
 		"originalContentUrl"=> "https://i.pinimg.com/originals/cc/22/d1/cc22d10d9096e70fe3dbe3be2630182b.jpg",
 		"previewImageUrl"=> "https://i.pinimg.com/originals/cc/22/d1/cc22d10d9096e70fe3dbe3be2630182b.jpg"
 	];
+}else{
+	
 }
 
 
