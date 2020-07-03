@@ -17,24 +17,24 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
 			$text = $event['source']['userId'];
-			$message = $events['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			if($event['message']['text'] == 'ซอยข๋อยแหน่'){
-				
-				$arrayPostData['to'] = $id;
-				$arrayPostData['messages'][0]['type'] = "text";
-				$arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา";
-				$arrayPostData['messages'][1]['type'] = "sticker";
-				$arrayPostData['messages'][1]['packageId'] = "11539";
-				$arrayPostData['messages'][1]['stickerId'] = "52114129"
-			}elseif($event['message']['text'] == 'สวัสดี'){
-				$arrayPostData['to'] = $text;
-				$arrayPostData['messages'][0]['type'] = "text";
-				$arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา";
-				$arrayPostData['messages'][1]['type'] = "sticker";
-				$arrayPostData['messages'][1]['packageId'] = "2";
-				$arrayPostData['messages'][1]['stickerId'] = "34"
+				$messages = [
+					// 'type' => 'text',
+					// 'text' => $text
+					'type' => "sticker",
+					'packageId' => "11537",
+					'stickerId' => "52002763"
+				];
+			}elseif($event['message']['text'] == 'id'){
+				$messages = [
+					'type' => 'text',
+					'text' => $text
+					// 'type' => "sticker",
+					// 'packageId' => "11537",
+					// 'stickerId' => "52002763"
+				];
 			
 			}else{
 				// $messages = [
@@ -51,7 +51,7 @@ if (!is_null($events['events'])) {
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
-				'messages' => [$arrayPostData],
+				'messages' => [$messages],
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
