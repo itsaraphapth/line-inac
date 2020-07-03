@@ -165,10 +165,10 @@ $request_array = json_decode($request, true);   // Decode JSON to Array
 // 		]
 // 	];
 // }else{
-	$json =[
-		"type": "image",
-		"originalContentUrl": "https://i.pinimg.com/originals/cc/22/d1/cc22d10d9096e70fe3dbe3be2630182b.jpg",
-		"previewImageUrl": "https://i.pinimg.com/originals/cc/22/d1/cc22d10d9096e70fe3dbe3be2630182b.jpg"
+	$json = [
+		"type"=> "image",
+		"originalContentUrl"=> "https://i.pinimg.com/originals/cc/22/d1/cc22d10d9096e70fe3dbe3be2630182b.jpg",
+		"previewImageUrl"=> "https://i.pinimg.com/originals/cc/22/d1/cc22d10d9096e70fe3dbe3be2630182b.jpg"
 	];
 // }
 
