@@ -21,27 +21,26 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 			if($event['message']['text'] == 'ซอยข๋อยแหน่'){
 				$messages = [
-					// 'type' => 'text',
-					// 'text' => $text
-					'type' => "sticker",
-					'packageId' => "11537",
-					'stickerId' => "52002763"
+					{
+						"type" => "text",
+						"text" => "อิหยังหวะ"
+					},
+					{
+						'type' => "sticker",
+						'packageId' => "11537",
+						'stickerId' => "52002763"
+					}
+					
 				];
 			}elseif($event['message']['text'] == 'ขอไอดี'){
 				$messages = [
 					'type' => 'text',
 					'text' => $text
-					// 'type' => "sticker",
-					// 'packageId' => "11537",
-					// 'stickerId' => "52002763"
 				];
 			}elseif($event['message']['text'] == 'ถามหน่อย'){
 				$messages = [
 					'type' => 'text',
 					'text' => "อะไรหรอ??"
-					// 'type' => "sticker",
-					// 'packageId' => "11537",
-					// 'stickerId' => "52002763"
 				];
 			}else{
 				// $messages = [
