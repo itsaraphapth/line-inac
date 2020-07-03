@@ -19,15 +19,24 @@ if (!is_null($events['events'])) {
 			$text = $event['source']['userId'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
-
+			if($event['message']['type'] == "สวัสดี"){
+				$messages = [
+					'type' => 'text',
+					'text' => $text
+					// 'type' => "sticker",
+					// 'packageId' => "2",
+					// 'stickerId' => "34"
+				];
+			}else{
+				$messages = [
+					'type' => 'text',
+					'text' => $text,
+					'type' => "sticker",
+					'packageId' => "2",
+					'stickerId' => "34"
+				];
+			}
 			// Build message to reply back
-			$messages = [
-				'type' => 'text',
-				'text' => $text
-				// 'type' => "sticker",
-				// 'packageId' => "2",
-				// 'stickerId' => "34"
-			];
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
