@@ -164,7 +164,7 @@ if($message == "ขอราคา"){
 		  ]
 		]
 	];
-}elseif($message == "บอลไม่สวย"{
+}elseif($message == "บอลไม่สวย"){
 	$json = [
 		"type"=> "image",
 		"originalContentUrl"=> "https://i.pinimg.com/originals/cc/22/d1/cc22d10d9096e70fe3dbe3be2630182b.jpg",
