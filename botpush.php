@@ -70,7 +70,7 @@
   
             // message setup & send
             if($text != NULL){
-              $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($text);
+              $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("OMG");
               $response = $bot->replyMessage($to, $textMessageBuilder);
             }
   
