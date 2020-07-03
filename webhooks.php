@@ -138,7 +138,7 @@ if($message == "ขอราคา"){
 		  "items"=> [
 			[
 			  "type"=> "action", 
-			  "imageUrl"=> "https://example.com/sushi.png",
+			  "imageUrl"=> "https://img2.thaipng.com/20171127/6dd/sushi-png-clipart-image-5a1ca4f5456d13.2744073815118266772844.jpg",
 			  "action"=> [
 				"type"=> "message",
 				"label"=> "Sushi",
@@ -147,7 +147,7 @@ if($message == "ขอราคา"){
 			],
 			[
 			  "type"=> "action",
-			  "imageUrl"=> "https://example.com/tempura.png",
+			  "imageUrl"=> "https://png.pngtree.com/element_our/20190604/ourmid/pngtree-fried-shrimp-tempura-food-delicious-golden-yellow-image_1482390.jpg",
 			  "action"=> [
 				"type"=> "message",
 				"label"=> "Tempura",
@@ -171,7 +171,7 @@ if($message == "ขอราคา"){
 		"previewImageUrl"=> "https://i.pinimg.com/originals/cc/22/d1/cc22d10d9096e70fe3dbe3be2630182b.jpg"
 	];
 }else{
-	
+
 }
 
 
