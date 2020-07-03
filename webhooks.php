@@ -61,7 +61,7 @@ if (!is_null($events['events'])) {
 
 	  // message setup & send
 	  if($text != NULL){
-		$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($text);
+		$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($event['type']);
 		$response = $bot->replyMessage($to, $textMessageBuilder);
 	  }
 
