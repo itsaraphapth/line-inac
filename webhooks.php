@@ -11,7 +11,7 @@ $POST_HEADER = array('Content-Type: application/json', 'Authorization: Bearer ' 
 $request = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($request, true);   // Decode JSON to Array
 $message = $request_array['events'][0]['message']['text'];
-if($message == "บอลติดหนี้ใครบ้าง"){
+if($message == "ขอราคา"){
 	$json = [
 		"type" => "flex",
 		"altText" => "Hello Flex Message",
@@ -190,11 +190,6 @@ if($message == "บอลติดหนี้ใครบ้าง"){
 }else{
 
 }
-
-
-
-
-
   if ( sizeof($request_array['events']) > 0 ) {
     foreach ($request_array['events'] as $event) {
         error_log(json_encode($event));
