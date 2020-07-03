@@ -9,13 +9,21 @@ $access_token = '82RJmA6R8Us7FXuVhejH4foQ9mEwGWdm07S4MUMB3Lf5mANVg01RzLnVIQbeLyG
 $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
+
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
-	// Loop through each event
-	foreach ($events['events'] as $event) {
-		// Reply only when message sent is in 'text' format
-		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
-			// Get text sent
+  foreach ($events['events'] as $event) {
+	if ($event['type'] == 'message') {
+
+	  switch ($message) {
+		case 'help':
+		  $text = "ฉันคือ ID Finder Bot ยินดีที่ได้รู้จัก";
+		  $text .= "\nฉันมีหน้าที่ช่วยคุณค้าหา UserID RoomID หรือ GroupID ให้กับคุณ";
+		  $text .= "\nลองพิมพ์ /id ดูซิ";
+		  break;
+		case 'id':
+		  $text = "ข้อมูล ID ของคุณ";
+		 // Get text sent
 			$text = $event['source']['userId'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
@@ -45,7 +53,18 @@ if (!is_null($events['events'])) {
 			curl_close($ch);
 
 			echo $result . "\r\n";
-		}
+		  break;
+		default:
+		  $text = NULL;
+		  break;
+	  }
+
+	  // message setup & send
+	  if($text != NULL){
+		$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($text);
+		$response = $bot->replyMessage($to, $textMessageBuilder);
+	  }
+
 	}
+  }
 }
-echo "OK";
