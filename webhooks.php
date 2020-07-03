@@ -26,26 +26,14 @@ if (!is_null($events['events'])) {
 					'type' => "sticker",
 					'packageId' => "11537",
 					'stickerId' => "52002763"
+				],[
+					'type' => 'text',
+					'text' => "อิหยัง"
 				];
 			}elseif($event['message']['text'] == 'ขอไอดี'){
 				$messages = [
 					'type' => 'text',
 					'text' => $text
-				],[
-					'type' => 'text',
-					'text' => "select your favorite"
-					'quickReply' => {
-						'item' = [
-							{
-								"type" => "action", // ③
-								// "imageUrl": "https://example.com/sushi.png",
-								"action" => {
-								"type"=> "message",
-								"label"=> "Sushi",
-								"text"=> "Sushi"
-							}
-						]
-					}
 				];
 			}elseif($event['message']['text'] == 'ถามหน่อย'){
 				$messages = [
