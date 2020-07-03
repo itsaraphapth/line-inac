@@ -10,7 +10,7 @@ $POST_HEADER = array('Content-Type: application/json', 'Authorization: Bearer ' 
 
 $request = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($request, true);   // Decode JSON to Array
-$message = $request_array['events']['message']['text'];
+$message = $request_array['events'][0]['message']['text'];
 if($message == "สวัสดี"){
 	$json = [
 		"type" => "flex",
@@ -169,7 +169,7 @@ else if($message == "ฝันดี"){
 		"type": "image",
 		"originalContentUrl": "https://i.pinimg.com/originals/cc/22/d1/cc22d10d9096e70fe3dbe3be2630182b.jpg",
 		"previewImageUrl": "https://i.pinimg.com/originals/cc/22/d1/cc22d10d9096e70fe3dbe3be2630182b.jpg"
-	]
+	];
 }
 
 
