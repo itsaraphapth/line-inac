@@ -19,15 +19,8 @@ if (!is_null($events['events'])) {
 			$text = $event['source']['userId'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
-			if($event['message']['text'] == 'สวัสดี'){
-				$messages = [
-					'type' => 'text',
-					'text' => $text
-					// 'type' => "sticker",
-					// 'packageId' => "2",
-					// 'stickerId' => "34"
-				];
-			}else{
+			if($event['message']['text'] == 'ซอยข๋อยแหน่'){
+				
 				$messages = [
 					'type' => 'text',
 					'text' => $text,
@@ -35,6 +28,14 @@ if (!is_null($events['events'])) {
 					'packageId' => "2",
 					'stickerId' => "34"
 				];
+			}else{
+				// $messages = [
+				// 	'type' => 'text',
+				// 	'text' => $text
+				// 	// 'type' => "sticker",
+				// 	// 'packageId' => "2",
+				// 	// 'stickerId' => "34"
+				// ];
 			}
 			// Build message to reply back
 
