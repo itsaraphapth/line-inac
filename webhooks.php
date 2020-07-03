@@ -18,14 +18,14 @@ if (!is_null($events['events'])) {
 			// Get text sent
 			// $text = $event['source']['userId'];
 
-			if(isset($arrayJson['events']['userId']){
-				$text = $arrayJson['events']['userId'];
+			if(isset($event['source']['userId']){
+				$text = $event['source']['userId'];
 			 }
-			 else if(isset($arrayJson['events']['groupId'])){
-				$text = $arrayJson['events']['groupId'];
+			 else if(isset($event['source']['groupId'])){
+				$text = $event['source']['groupId'];
 			 }
-			 else if(isset($arrayJson['events']['room'])){
-				$text = $arrayJson['events']['room'];
+			 else if(isset($event['source']['room'])){
+				$text = $event['source']['room'];
 			 }
 
 			// Get replyToken
