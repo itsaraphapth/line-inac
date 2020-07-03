@@ -27,7 +27,7 @@ if (!is_null($events['events'])) {
 					'packageId' => "11537",
 					'stickerId' => "52002763"
 				];
-			}elseif($event['message']['text'] == 'id'){
+			}elseif($event['message']['text'] == 'ขอไอดี'){
 				$messages = [
 					'type' => 'text',
 					'text' => $text
