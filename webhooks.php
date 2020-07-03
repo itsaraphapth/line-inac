@@ -11,6 +11,7 @@ $POST_HEADER = array('Content-Type: application/json', 'Authorization: Bearer ' 
 $request = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($request, true);   // Decode JSON to Array
 $message = $request_array['events']['message']['text'];
+var_export($message);
 // if($message == "สวัสดี"){
 // 	$json = [
 // 		"type" => "flex",
