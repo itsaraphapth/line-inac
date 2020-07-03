@@ -178,8 +178,8 @@ if($message == "ขอราคา"){
 }elseif($message == "ถามหน่อย"){
 	$json = [
 		"type" => "sticker",
-		"packageId" => "11537",
-		"packageId" => "52002749"
+		"packageId" => "sticker",
+		"stickerId" => "52002749"
 	];
 }else{
 
