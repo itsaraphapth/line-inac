@@ -130,7 +130,7 @@ if($message == "สวัสดี"){
 			]
 		]
 	];
-elseif($message == "ฝันดี"){
+}elseif($message == "ฝันดี"){
 	$json = [
 		"type"=> "text", 
 		"text"=> "Select your favorite food category or send me your location!",
