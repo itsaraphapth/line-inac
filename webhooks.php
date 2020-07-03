@@ -170,6 +170,36 @@ if($message == "ขอราคา"){
 		"originalContentUrl"=> "https://i.pinimg.com/originals/cc/22/d1/cc22d10d9096e70fe3dbe3be2630182b.jpg",
 		"previewImageUrl"=> "https://i.pinimg.com/originals/cc/22/d1/cc22d10d9096e70fe3dbe3be2630182b.jpg"
 	];
+
+
+
+
+
+
+
+
+}elseif($message == "ซอยข๋อยแหน่"){
+	$json = [
+		[
+			"type" => "text",
+			"text" => "อิหยังหวะ"
+		],[
+			"type" => "sticker",
+			"packageId" => "11537",
+			"packageId" => "52002763"
+		]
+	];
+}elseif($message == "ถามหน่อย"){
+	$json = [
+		[
+			"type" => "text",
+			"text" => "ว่ามาติหละ"
+		],[
+			"type" => "sticker",
+			"packageId" => "11537",
+			"packageId" => "52002749"
+		]
+	];
 }else{
 
 }
