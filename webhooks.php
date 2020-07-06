@@ -205,6 +205,12 @@ if($message == "ขอราคา"){
 		"originalContentUrl"=> "https://i.imgur.com/RAewXpl.jpg",
 		"previewImageUrl"=> "https://i.imgur.com/RAewXpl.jpg"
 	];
+}elseif($message == "บุหรี่มั้ย"){
+	$json = [
+		"type"=> "image",
+		"originalContentUrl"=> "https://i.imgur.com/jSx0qta.jpg",
+		"previewImageUrl"=> "https://i.imgur.com/jSx0qta.jpg"
+	];
 }else{
 
 }
