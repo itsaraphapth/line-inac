@@ -187,6 +187,24 @@ if($message == "ขอราคา"){
 		"packageId" => "11537",
 		"stickerId" => "52002763"
 	];
+}elseif($message == "กานดา"){
+	$json = [
+		"type"=> "image",
+		"originalContentUrl"=> "https://i.imgur.com/RAewXpl.jpg",
+		"previewImageUrl"=> "https://i.imgur.com/RAewXpl.jpg"
+	];
+}elseif($message == "สาลิตา เชื้อชาวนา"){
+	$json = [
+		"type"=> "image",
+		"originalContentUrl"=> "https://i.imgur.com/RAewXpl.jpg",
+		"previewImageUrl"=> "https://i.imgur.com/RAewXpl.jpg"
+	];
+}elseif($message == "น้องเป็ด"){
+	$json = [
+		"type"=> "image",
+		"originalContentUrl"=> "https://i.imgur.com/RAewXpl.jpg",
+		"previewImageUrl"=> "https://i.imgur.com/RAewXpl.jpg"
+	];
 }else{
 
 }
