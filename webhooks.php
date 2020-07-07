@@ -214,7 +214,7 @@ if($message == "ขอราคา"){
 }elseif($message == "userid"){
 	$json = [
 		"type"=> "text",
-		"text" => $request_array['events'][0]['source']['userId']
+		"text" => $request_array['events'][0]['message']['text']
 	];
 }else{
 
