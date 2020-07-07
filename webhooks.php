@@ -211,6 +211,11 @@ if($message == "ขอราคา"){
 		"originalContentUrl"=> "https://i.imgur.com/jSx0qta.jpg",
 		"previewImageUrl"=> "https://i.imgur.com/jSx0qta.jpg"
 	];
+}elseif($message == "userid"){
+	$json = [
+		"type"=> "text",
+		"text" => $request_array['events'][0]['source']['userId']
+	];
 }else{
 
 }
