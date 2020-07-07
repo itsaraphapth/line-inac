@@ -27,8 +27,8 @@ $request_array = json_decode($request, true);   // Decode JSON to Array
     // if(isset($_POST['to']) && trim($_POST['to']) != '' && isset($_POST['text']) && trim($_POST['text']) != ''){
       if(trim($request_array['id']) != ''){
       // check for send message only
-      $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($_POST['text']);
-      $response = $bot->pushMessage($_POST['to'], $textMessageBuilder);
+      $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($request_array['text']);
+      $response = $bot->pushMessage($request_array['id'], $textMessageBuilder);
      
       // check status sending line api
       if($response->isSucceeded()){
