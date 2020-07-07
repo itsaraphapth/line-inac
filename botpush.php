@@ -24,7 +24,7 @@
   
 $request = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($request, true);   // Decode JSON to Array
-echo $request_array;
+var_dump($request_array);
 die();
     // if(isset($_POST['to']) && trim($_POST['to']) != '' && isset($_POST['text']) && trim($_POST['text']) != ''){
       if(trim($request_array['id']) != ''){
