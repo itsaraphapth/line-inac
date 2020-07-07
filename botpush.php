@@ -24,6 +24,8 @@
   
 $request = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($request, true);   // Decode JSON to Array
+json_decode($request);
+die();
     // if(isset($_POST['to']) && trim($_POST['to']) != '' && isset($_POST['text']) && trim($_POST['text']) != ''){
       if(trim($request_array['id']) != ''){
       // check for send message only
