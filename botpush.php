@@ -197,13 +197,13 @@ $arrayHeader[] = "Authorization: Bearer {$token}";
       curl_close ($ch);
    }
    function pushMsgjson($arrayHeader,$arrayPostData){
-     print_r($arrayPostData);
-     
+    
+
     $data = [
       'messages' => $arrayPostData
   ];
   $post_body = json_encode($data, JSON_UNESCAPED_UNICODE);
-
+  print_r($post_body);
       $strUrl = "https://api.line.me/v2/bot/message/push";
       $ch = curl_init();
       curl_setopt($ch, CURLOPT_URL,$strUrl);
