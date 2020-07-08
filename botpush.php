@@ -12,8 +12,8 @@
     $request_array = json_decode($request, true);   // Decode JSON to Array
  
     // var_dump($request_array);
-    echo $request_array[0]['events']['type'];
-    die();
+    // echo $request_array[0]['events']['type'];
+    // die();
     $input = $request_array[0]['events']['type'];
     
     if (trim($input = "message")) {
@@ -135,6 +135,7 @@
           ]
         ]
       ];
+
     }
       if ( sizeof($request_array['events']) > 0 ) {
         foreach ($request_array['events'] as $event) {
