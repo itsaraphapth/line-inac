@@ -219,8 +219,6 @@ if($message == "ขอราคา"){
 }else{
 
 }
-var_dump($request_array);
-die();
 
 
   if ( sizeof($request_array['events']) > 0 ) {
