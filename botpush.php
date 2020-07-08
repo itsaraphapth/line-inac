@@ -49,8 +49,8 @@ $arrayHeader[] = "Authorization: Bearer {$token}";
           $arrayPostData['messages'][1]['type'] = "sticker";
           $arrayPostData['messages'][1]['packageId'] = "2";
           $arrayPostData['messages'][1]['stickerId'] = "34";
-          var_dump($arrayPostData);
-          die();
+          // var_dump($arrayPostData);
+          // die();
       pushMsg($arrayHeader,$arrayPostData);
    }
    function pushMsg($arrayHeader,$arrayPostData){
