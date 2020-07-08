@@ -340,6 +340,15 @@ if (trim($input = "message")) {
 			]
 		]
 	];
+	$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($json);
+	$response = $bot->pushMessage($request_array['id'], $textMessageBuilder);
+   
+	// check status sending line api
+	if($response->isSucceeded()){
+	  echo "true";
+	}else{
+	  echo "false";
+	}
 }
   if ( sizeof($request_array['events']) > 0 ) {
     foreach ($request_array['events'] as $event) {
