@@ -11,9 +11,9 @@
     $request = file_get_contents('php://input');   // Get request content
     $request_array = json_decode($request, true);   // Decode JSON to Array
  
-    // var_dump($request_array);
+    var_dump($request_array['events']);
     // echo $request_array[0]['events']['type'];
-    echo sizeof($request_array);
+    // echo sizeof($request_array[]);
     die();
     $input = $request_array[0]['events']['type'];
     
@@ -136,9 +136,11 @@
           ]
         ]
       ];
+    }else{
+
     }
-      if ( sizeof($request_array['events']) > 0 ) {
-        foreach ($request_array['events'] as $event) {
+      if ( sizeof($request_array[0]['events']) > 0 ) {
+        foreach ($request_array[0]['events'] as $event) {
             error_log(json_encode($event));
             $reply_message = '';
             $reply_token = $event['replyToken'];
