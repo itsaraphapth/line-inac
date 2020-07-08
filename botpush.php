@@ -76,15 +76,21 @@ $arrayHeader[] = "Authorization: Bearer {$token}";
           $arrayPostData['messages'][2]['contents']['body']['layout'] =  "vertical";
           $arrayPostData['messages'][2]['contents']['body']['contents'][0]['type'] =  "separator";
           $arrayPostData['messages'][2]['contents']['body']['contents'][0]['color'] =  "#C3C3C3";
-          
+
           $arrayPostData['messages'][2]['contents']['body']['contents'][1]['type'] =  "box";
           $arrayPostData['messages'][2]['contents']['body']['contents'][1]['layout'] =  "baseline";
           $arrayPostData['messages'][2]['contents']['body']['contents'][1]['margin'] =  "lg";
-          $arrayPostData['messages'][2]['contents']['body']['contents'][1]['contents']['type'] =  "text";
-          $arrayPostData['messages'][2]['contents']['body']['contents'][1]['contents']['text'] =  "Merchant";
-          $arrayPostData['messages'][2]['contents']['body']['contents'][1]['contents']['align'] =  "start";
-          $arrayPostData['messages'][2]['contents']['body']['contents'][1]['contents']['align'] =  "start";
-          $arrayPostData['messages'][2]['contents']['body']['contents'][1]['contents']['color'] =  "#C3C3C3";
+          $arrayPostData['messages'][2]['contents']['body']['contents'][1]['contents'][0]['type'] =  "text";
+          $arrayPostData['messages'][2]['contents']['body']['contents'][1]['contents'][0]['text'] =  "Merchant";
+          $arrayPostData['messages'][2]['contents']['body']['contents'][1]['contents'][0]['align'] =  "start";
+          $arrayPostData['messages'][2]['contents']['body']['contents'][1]['contents'][0]['align'] =  "start";
+          $arrayPostData['messages'][2]['contents']['body']['contents'][1]['contents'][0]['color'] =  "#C3C3C3";
+          
+          $arrayPostData['messages'][2]['contents']['body']['contents'][1]['contents'][1]['type'] =  "text";
+          $arrayPostData['messages'][2]['contents']['body']['contents'][1]['contents'][1]['text'] =  "BTS 01";
+          $arrayPostData['messages'][2]['contents']['body']['contents'][1]['contents'][1]['align'] =  "end";
+          $arrayPostData['messages'][2]['contents']['body']['contents'][1]['contents'][1]['color'] =  "#000000";
+
 
           $arrayPostData['messages'][2]['contents']['footer']['type'] =  "box";
           $arrayPostData['messages'][2]['contents']['footer']['layout'] =  "horizontal";
