@@ -24,9 +24,9 @@
     $request_array = json_decode($request, true);   // Decode JSON to Array
  
     // var_dump($request_array);
-    echo "<p>".$request_array[0]['events']['type']."</p>";
-    die();
-    $input = $request_array['type'];
+    // echo "<p>".$request_array[0]['events']['type']."</p>";
+    // die();
+    $input = $request_arrayy[0]['events']['type'];
     
     if (trim($input = "message")) {
       $json = [
