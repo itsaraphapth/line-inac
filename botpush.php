@@ -199,7 +199,7 @@ $arrayHeader[] = "Authorization: Bearer {$token}";
    function pushMsgjson($arrayHeader,$arrayPostData){
      
     $data = [
-      'messages' => [$arrayPostData]
+      'messages' => $arrayPostData
   ];
   $post_body = json_encode($data, JSON_UNESCAPED_UNICODE);
 
