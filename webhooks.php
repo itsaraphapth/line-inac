@@ -220,8 +220,7 @@ if($message == "ขอราคา"){
 
 }
 $input = $request_array['type'];
-echo $input;
-die();
+
 if (trim($input = "message")) {
 	$json = [
 		"type" => "flex",
@@ -341,6 +340,8 @@ if (trim($input = "message")) {
 			]
 		]
 	];
+	var_dump($json);
+	die();
 }
   if ( sizeof($request_array['events']) > 0 ) {
     foreach ($request_array['events'] as $event) {
