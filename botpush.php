@@ -197,6 +197,7 @@ $arrayHeader[] = "Authorization: Bearer {$token}";
       curl_close ($ch);
    }
    function pushMsgjson($arrayHeader,$arrayPostData){
+     print_r($arrayPostData);
      
     $data = [
       'messages' => $arrayPostData
