@@ -26,7 +26,7 @@
     // var_dump($request_array);
     echo $request_array[0]['events']['type'];
     die();
-    $input = $request_arrayy[0]['events']['type'];
+    $input = $request_array[0]['events']['type'];
     
     if (trim($input = "message")) {
       $json = [
