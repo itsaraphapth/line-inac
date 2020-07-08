@@ -1,16 +1,4 @@
 <?php
-    require_once __DIR__ . '/vendor/autoload.php';
-  
-    // debug
-    error_reporting(-1);
-    ini_set('display_errors', 'On');
-  
-    // Channel secret - (from https://developers.line.me/console/)
-    $token = '82RJmA6R8Us7FXuVhejH4foQ9mEwGWdm07S4MUMB3Lf5mANVg01RzLnVIQbeLyGly6AF1Zm1LjUo1XAk1I4fJKT+qRgUwONfQtwN+KxohE+prow+FC7B/JDmctO55d2I7pn2o0lgcLidPVgZr8g0vgdB04t89/1O/w1cDnyilFU=';
-    // $token = $_POST['token'];
-    
-    // Channel access token - (from https://developers.line.me/console/)
-    $secret = '9193f4<?php
 
 
     $API_URL = 'https://api.line.me/v2/bot/message';
