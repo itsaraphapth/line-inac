@@ -281,7 +281,7 @@ if(trim($message) == "ขอราคา"){
 						"type" => "text",
 						"text" => "ซื่อผู้ชาย",
 						"align" => "start",
-						"color" => "#C3C3C3"
+						"color" => "#000000"
 					],
 					[
 						"type" => "text",
