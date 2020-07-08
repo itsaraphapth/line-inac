@@ -41,6 +41,8 @@ $arrayHeader = array();
     //     echo "false";
     //   }
     $message = $request_array['type'];
+    echo $message;
+    die();
     if($message == "message"){
       $arrayPostData['to'] = $request_array['id'];
       $arrayPostData['messages'][0]['type'] = "text";
