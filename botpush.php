@@ -73,11 +73,12 @@ $arrayHeader[] = "Authorization: Bearer {$token}";
           $arrayPostData['messages'][2]['contents']['header']['contents'][2]['size'] =  "lg";
           $arrayPostData['messages'][2]['contents']['header']['contents'][2]['weight'] =  "bold";
           $arrayPostData['messages'][2]['contents']['header']['contents'][2]['color'] =  "#000000";
-         
+
           $arrayPostData['messages'][2]['contents']['body']['type'] =  "box";
           $arrayPostData['messages'][2]['contents']['body']['layout'] =  "vertical";
           $arrayPostData['messages'][2]['contents']['body']['contents'][0]['type'] =  "separator";
           $arrayPostData['messages'][2]['contents']['body']['contents'][0]['color'] =  "#C3C3C3";
+
           $arrayPostData['messages'][2]['contents']['body']['contents'][1]['type'] =  "box";
           $arrayPostData['messages'][2]['contents']['body']['contents'][1]['layout'] =  "baseline";
           $arrayPostData['messages'][2]['contents']['body']['contents'][1]['margin'] =  "lg";
@@ -90,11 +91,11 @@ $arrayHeader[] = "Authorization: Bearer {$token}";
           $arrayPostData['messages'][2]['contents']['body']['contents'][1]['contents'][1]['text'] =   $request_array['unit'];
           $arrayPostData['messages'][2]['contents']['body']['contents'][1]['contents'][1]['align'] =  "end";
           $arrayPostData['messages'][2]['contents']['body']['contents'][1]['contents'][1]['color'] =  "#000000";
-          
+
           $arrayPostData['messages'][2]['contents']['body']['contents'][2]['type'] =  "separator";
           $arrayPostData['messages'][2]['contents']['body']['contents'][2]['margin'] =  "lg";
           $arrayPostData['messages'][2]['contents']['body']['contents'][2]['color'] =  "#C3C3C3";
-          
+
           $arrayPostData['messages'][2]['contents']['footer']['type'] =  "box";
           $arrayPostData['messages'][2]['contents']['footer']['layout'] =  "horizontal";
           $arrayPostData['messages'][2]['contents']['footer']['contents'][0]['type'] =  "text";
@@ -111,7 +112,7 @@ $arrayHeader[] = "Authorization: Bearer {$token}";
       echo true;
    }elseif ($message == "flex") {
     
-      $arrayPostData = [
+      $arrayPostData['messages'] = [
         "type" => "flex",
         "altText" => "Hello Flex Message",
         "contents" => [
@@ -229,14 +230,8 @@ $arrayHeader[] = "Authorization: Bearer {$token}";
           ]
         ]
       ];
-      $data = [
-        'messages' => [$arrayPostData]
-    ];
-    $post_body = json_encode($data, JSON_UNESCAPED_UNICODE);
-    print_r($post_body);
-    die();
-    $send_result =   pushMsgjson($arrayHeader,$post_body);
-    echo "Result: ".$send_result."\r\n";
+      
+      pushMsg($arrayHeader,$arrayPostData['messages']);
    }
    function pushMsg($arrayHeader,$arrayPostData){
       $strUrl = "https://api.line.me/v2/bot/message/push";
@@ -245,14 +240,20 @@ $arrayHeader[] = "Authorization: Bearer {$token}";
       curl_setopt($ch, CURLOPT_HEADER, false);
       curl_setopt($ch, CURLOPT_POST, true);
       curl_setopt($ch, CURLOPT_HTTPHEADER, $arrayHeader);
-      curl_setopt($ch, CURLOPT_POSTFIELDS, $arrayPostData);
+      curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($arrayPostData));
       curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
       curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
       $result = curl_exec($ch);
       curl_close ($ch);
    }
-   function pushMsgjson($arrayHeader,$post_body){
+   function pushMsgjson($arrayHeader,$arrayPostData){
     
+
+    $data = [
+      'messages' => [$arrayPostData]
+    ];
+    $post_body = json_encode($data, JSON_UNESCAPED_UNICODE);
+    echo $post_body;
       $strUrl = "https://api.line.me/v2/bot/message/push";
       $ch = curl_init();
       curl_setopt($ch, CURLOPT_URL,$strUrl);
