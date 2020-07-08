@@ -49,6 +49,14 @@ $arrayHeader[] = "Authorization: Bearer {$token}";
           $arrayPostData['messages'][1]['type'] = "sticker";
           $arrayPostData['messages'][1]['packageId'] = "2";
           $arrayPostData['messages'][1]['stickerId'] = "34";
+          $arrayPostData['messages'][2]['type'] = "flex";
+          $arrayPostData['messages'][2]['altText'] =  "Hello Flex Message";
+          $arrayPostData['messages'][2]['contents']['type'] =  "bubble";
+          $arrayPostData['messages'][2]['contents']['direction'] =  "ltr";
+          $arrayPostData['messages'][2]['contents']['header']['type'] =  "box";
+          $arrayPostData['messages'][2]['contents']['header']['layout'] =  "vertical";
+          $arrayPostData['messages'][2]['contents']['header']['contents'][0]['type'] =  "text";
+          $arrayPostData['messages'][2]['contents']['header']['contents'][0]['text'] =  "บอลติดหนี้ห";
           // var_dump($arrayPostData);
           // die();
       pushMsg($arrayHeader,$arrayPostData);
@@ -194,7 +202,7 @@ $arrayHeader[] = "Authorization: Bearer {$token}";
       'messages' => [$arrayPostData]
   ];
   $post_body = json_encode($data, JSON_UNESCAPED_UNICODE);
-  
+
       $strUrl = "https://api.line.me/v2/bot/message/push";
       $ch = curl_init();
       curl_setopt($ch, CURLOPT_URL,$strUrl);
