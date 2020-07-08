@@ -24,33 +24,33 @@
   
 $request = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($request, true);   // Decode JSON to Array
-$message = $request_array['type'];
-echo $message;
-die();
 $arrayHeader = array();
-   $arrayHeader[] = "Content-Type: application/json";
-   $arrayHeader[] = "Authorization: Bearer {$token}";
-    // // if(isset($_POST['to']) && trim($_POST['to']) != '' && isset($_POST['text']) && trim($_POST['text']) != ''){
-    //   if(trim($request_array['id']) != ''){
+$arrayHeader[] = "Content-Type: application/json";
+$arrayHeader[] = "Authorization: Bearer {$token}";
+// // if(isset($_POST['to']) && trim($_POST['to']) != '' && isset($_POST['text']) && trim($_POST['text']) != ''){
+  //   if(trim($request_array['id']) != ''){
     //   // check for send message only
     //   $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($request_array['text']);
     //   $response = $bot->pushMessage($request_array['id'], $textMessageBuilder);
-     
+    
     //   // check status sending line api
     //   if($response->isSucceeded()){
-    //     echo "true";
-    //     return;
-    //   }else{
-    //     echo "false";
-    //   }
-   
-    if($message == "message"){
-      $arrayPostData['to'] = $request_array['id'];
-      $arrayPostData['messages'][0]['type'] = "text";
-      $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา";
-      $arrayPostData['messages'][1]['type'] = "sticker";
-      $arrayPostData['messages'][1]['packageId'] = "2";
-      $arrayPostData['messages'][1]['stickerId'] = "34";
+      //     echo "true";
+      //     return;
+      //   }else{
+        //     echo "false";
+        //   }
+        
+      $message = $request_array['type'];
+        if($message == "message"){
+          $arrayPostData['to'] = $request_array['id'];
+          $arrayPostData['messages'][0]['type'] = "text";
+          $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา";
+          $arrayPostData['messages'][1]['type'] = "sticker";
+          $arrayPostData['messages'][1]['packageId'] = "2";
+          $arrayPostData['messages'][1]['stickerId'] = "34";
+          var_dump($message);
+          die();
       pushMsg($arrayHeader,$arrayPostData);
    }
    function pushMsg($arrayHeader,$arrayPostData){
