@@ -13,7 +13,8 @@
  
     // var_dump($request_array);
     // echo $request_array[0]['events']['type'];
-    // die();
+    echo sizeof($request_array[0]['events']);
+    die();
     $input = $request_array[0]['events']['type'];
     
     if (trim($input = "message")) {
