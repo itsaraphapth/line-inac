@@ -24,6 +24,9 @@
   
 $request = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($request, true);   // Decode JSON to Array
+$message = $request_array['type'];
+echo $message;
+die();
 $arrayHeader = array();
    $arrayHeader[] = "Content-Type: application/json";
    $arrayHeader[] = "Authorization: Bearer {$token}";
@@ -40,9 +43,7 @@ $arrayHeader = array();
     //   }else{
     //     echo "false";
     //   }
-    $message = $request_array['type'];
-    echo $message;
-    die();
+   
     if($message == "message"){
       $arrayPostData['to'] = $request_array['id'];
       $arrayPostData['messages'][0]['type'] = "text";
@@ -67,49 +68,49 @@ $arrayHeader = array();
    }
    exit;
   
-    }else{
+    // }else{
   
-      // Get POST body content
-      $content = file_get_contents('php://input');
-      // Parse JSON
-      $events = json_decode($content, true);
+    //   // Get POST body content
+    //   $content = file_get_contents('php://input');
+    //   // Parse JSON
+    //   $events = json_decode($content, true);
   
-      // Validate parsed JSON data
-      if (!is_null($events['events'])) {
-        foreach ($events['events'] as $event) {
-          if($event['type'] == "message" && isset($event['message']['text'])){
+    //   // Validate parsed JSON data
+    //   if (!is_null($events['events'])) {
+    //     foreach ($events['events'] as $event) {
+    //       if($event['type'] == "message" && isset($event['message']['text'])){
   
-            $type = $event['source']['type']; // user , room , group
-            $to = $event['source'][$type.'Id']; // userId , roomId , groupId
-            $message = trim($event['message']['text']);
+    //         $type = $event['source']['type']; // user , room , group
+    //         $to = $event['source'][$type.'Id']; // userId , roomId , groupId
+    //         $message = trim($event['message']['text']);
   
-            switch ($message) {
-              case '/help':
-                $text = "ฉันคือ ID Finder Bot ยินดีที่ได้รู้จัก";
-                $text .= "\nฉันมีหน้าที่ช่วยคุณค้าหา UserID RoomID หรือ GroupID ให้กับคุณ";
-                $text .= "\nลองพิมพ์ /id ดูซิ";
-                break;
-              case '/id':
-                $text = "ข้อมูล ID ของคุณ";
-                if(isset($event['source']['userId'])){ $text .= "\nUser ID : ".$event['source']['userId']; }
-                if(isset($event['source']['roomId'])){ $text .= "\nRoom ID : ".$event['source']['roomId']; }
-                if(isset($event['source']['groupId'])){ $text .= "\nGroup ID : ".$event['source']['groupId']; }
-                break;
-              default:
-                $text = NULL;
-                break;
-            }
+    //         switch ($message) {
+    //           case '/help':
+    //             $text = "ฉันคือ ID Finder Bot ยินดีที่ได้รู้จัก";
+    //             $text .= "\nฉันมีหน้าที่ช่วยคุณค้าหา UserID RoomID หรือ GroupID ให้กับคุณ";
+    //             $text .= "\nลองพิมพ์ /id ดูซิ";
+    //             break;
+    //           case '/id':
+    //             $text = "ข้อมูล ID ของคุณ";
+    //             if(isset($event['source']['userId'])){ $text .= "\nUser ID : ".$event['source']['userId']; }
+    //             if(isset($event['source']['roomId'])){ $text .= "\nRoom ID : ".$event['source']['roomId']; }
+    //             if(isset($event['source']['groupId'])){ $text .= "\nGroup ID : ".$event['source']['groupId']; }
+    //             break;
+    //           default:
+    //             $text = NULL;
+    //             break;
+    //         }
   
-            // message setup & send
-            if($text != NULL){
-              $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("OMG");
-              $response = $bot->replyMessage($to, $textMessageBuilder);
-            }
+    //         // message setup & send
+    //         if($text != NULL){
+    //           $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("OMG");
+    //           $response = $bot->replyMessage($to, $textMessageBuilder);
+    //         }
   
-          }
-        }
-      }
-    }
+    //       }
+    //     }
+    //   }
+    // }
   
     // debug
     // echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
