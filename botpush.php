@@ -200,7 +200,7 @@ $arrayHeader[] = "Authorization: Bearer {$token}";
     
 
     $data = [
-      'messages' => $arrayPostData
+      'messages' => [$arrayPostData]
   ];
   $post_body = json_encode($data, JSON_UNESCAPED_UNICODE);
   echo $post_body;
