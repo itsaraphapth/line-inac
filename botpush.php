@@ -234,10 +234,10 @@ $arrayHeader[] = "Authorization: Bearer {$token}";
         'messages' => [$arrayPostData]
     ];
     $post_body = json_encode($data, JSON_UNESCAPED_UNICODE);
-    $send_result =   pushMsg($arrayHeader,$post_body);
+    $send_result =   pushMsgjson($arrayHeader,$post_body);
     echo "Result: ".$send_result."\r\n";
    }
-   function pushMsg($arrayHeader,$post_body){
+   function pushMsg($arrayHeader,$arrayPostData){
      var_dump($post_body);
      die();
       $strUrl = "https://api.line.me/v2/bot/message/push";
@@ -252,14 +252,8 @@ $arrayHeader[] = "Authorization: Bearer {$token}";
       $result = curl_exec($ch);
       curl_close ($ch);
    }
-   function pushMsgjson($arrayHeader,$arrayPostData){
+   function pushMsgjson($arrayHeader,$post_body){
     
-
-    $data = [
-      'messages' => [$arrayPostData]
-    ];
-    $post_body = json_encode($data, JSON_UNESCAPED_UNICODE);
-    echo $post_body;
       $strUrl = "https://api.line.me/v2/bot/message/push";
       $ch = curl_init();
       curl_setopt($ch, CURLOPT_URL,$strUrl);
