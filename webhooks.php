@@ -11,7 +11,7 @@ $POST_HEADER = array('Content-Type: application/json', 'Authorization: Bearer ' 
 $request = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($request, true);   // Decode JSON to Array
 $message = $request_array['events'][0]['message']['text'];
-if($message == "ขอราคา"){
+if(trim($message) == "ขอราคา"){
 	$json = [
 		"type" => "flex",
 		"altText" => "Hello Flex Message",
@@ -130,7 +130,7 @@ if($message == "ขอราคา"){
 			]
 		]
 	];
-}elseif($message == "อยากกินซูชิ"){
+}elseif(trim($message) == "อยากกินซูชิ"){
 	$json = [
 		"type"=> "text", 
 		"text"=> "Select your favorite food category or send me your location!",
@@ -164,54 +164,54 @@ if($message == "ขอราคา"){
 		  ]
 		]
 	];
-}elseif($message == "บอลสวยมั้ย"){
+}elseif(trim($message) == "บอลสวยมั้ย"){
 	$json = [
 		"type"=> "image",
 		"originalContentUrl"=> "https://i.pinimg.com/originals/cc/22/d1/cc22d10d9096e70fe3dbe3be2630182b.jpg",
 		"previewImageUrl"=> "https://i.pinimg.com/originals/cc/22/d1/cc22d10d9096e70fe3dbe3be2630182b.jpg"
 	];
-}elseif($message == "บอลไม่สวย"){
+}elseif(trim($message) == "บอลไม่สวย"){
 	$json = [
 		"type"=> "image",
 		"originalContentUrl"=> "https://i.pinimg.com/originals/cc/22/d1/cc22d10d9096e70fe3dbe3be2630182b.jpg",
 		"previewImageUrl"=> "https://i.pinimg.com/originals/cc/22/d1/cc22d10d9096e70fe3dbe3be2630182b.jpg"
 	];
-}elseif($message == "ซอยข๋อยแหน่"){
+}elseif(trim($message) == "ซอยข๋อยแหน่"){
 	$json = [
 		"type" => "text",
 		"text" => "อิหยังหวะ"
 	];
-}elseif($message == "ถามหน่อย"){
+}elseif(trim($message) == "ถามหน่อย"){
 	$json = [
 		"type" => "sticker",
 		"packageId" => "11537",
 		"stickerId" => "52002763"
 	];
-}elseif($message == "กานดา"){
+}elseif(trim($message) == "กานดา"){
 	$json = [
 		"type"=> "image",
 		"originalContentUrl"=> "https://i.imgur.com/RAewXpl.jpg",
 		"previewImageUrl"=> "https://i.imgur.com/RAewXpl.jpg"
 	];
-}elseif($message == "สาลิตา เชื้อชาวนา"){
+}elseif(trim($message) == "สาลิตา เชื้อชาวนา"){
 	$json = [
 		"type"=> "image",
 		"originalContentUrl"=> "https://i.imgur.com/RAewXpl.jpg",
 		"previewImageUrl"=> "https://i.imgur.com/RAewXpl.jpg"
 	];
-}elseif($message == "น้องเป็ด"){
+}elseif(trim($message) == "น้องเป็ด"){
 	$json = [
 		"type"=> "image",
 		"originalContentUrl"=> "https://i.imgur.com/RAewXpl.jpg",
 		"previewImageUrl"=> "https://i.imgur.com/RAewXpl.jpg"
 	];
-}elseif($message == "บุหรี่มั้ย"){
+}elseif(trim($message) == "บุหรี่มั้ย"){
 	$json = [
 		"type"=> "image",
 		"originalContentUrl"=> "https://i.imgur.com/jSx0qta.jpg",
 		"previewImageUrl"=> "https://i.imgur.com/jSx0qta.jpg"
 	];
-}elseif($message == "userid"){
+}elseif(trim($message) == "userid"){
 	$json = [
 		"type"=> "text",
 		"text" => $request_array['events'][0]['source']['userId']
