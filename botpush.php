@@ -78,7 +78,6 @@ $arrayHeader[] = "Authorization: Bearer {$token}";
           $arrayPostData['messages'][2]['contents']['body']['layout'] =  "vertical";
           $arrayPostData['messages'][2]['contents']['body']['contents'][0]['type'] =  "separator";
           $arrayPostData['messages'][2]['contents']['body']['contents'][0]['color'] =  "#C3C3C3";
-          for($i=1;$i<=10;$i++){
           $arrayPostData['messages'][2]['contents']['body']['contents'][1]['type'] =  "box";
           $arrayPostData['messages'][2]['contents']['body']['contents'][1]['layout'] =  "baseline";
           $arrayPostData['messages'][2]['contents']['body']['contents'][1]['margin'] =  "lg";
@@ -91,7 +90,7 @@ $arrayHeader[] = "Authorization: Bearer {$token}";
           $arrayPostData['messages'][2]['contents']['body']['contents'][1]['contents'][1]['text'] =   $request_array['unit'];
           $arrayPostData['messages'][2]['contents']['body']['contents'][1]['contents'][1]['align'] =  "end";
           $arrayPostData['messages'][2]['contents']['body']['contents'][1]['contents'][1]['color'] =  "#000000";
-          }
+          
           $arrayPostData['messages'][2]['contents']['body']['contents'][2]['type'] =  "separator";
           $arrayPostData['messages'][2]['contents']['body']['contents'][2]['margin'] =  "lg";
           $arrayPostData['messages'][2]['contents']['body']['contents'][2]['color'] =  "#C3C3C3";
