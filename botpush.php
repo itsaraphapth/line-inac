@@ -71,18 +71,20 @@ $arrayHeader[] = "Authorization: Bearer {$token}";
           $arrayPostData['messages'][2]['contents']['header']['contents'][2]['size'] =  "lg";
           $arrayPostData['messages'][2]['contents']['header']['contents'][2]['weight'] =  "bold";
           $arrayPostData['messages'][2]['contents']['header']['contents'][2]['color'] =  "#000000";
-          // $arrayPostData['messages'][2]['contents']['body']['type'] =  "box";
-          // $arrayPostData['messages'][2]['contents']['body']['layout'] =  "vertical";
-          // $arrayPostData['messages'][2]['contents']['body']['contents'][0]['separator'] =  "text";
-          // $arrayPostData['messages'][2]['contents']['body']['contents'][0]['color'] =  "#C3C3C3";
-          // $arrayPostData['messages'][2]['contents']['body']['contents'][1]['type'] =  "box";
-          // $arrayPostData['messages'][2]['contents']['body']['contents'][1]['layout'] =  "baseline";
-          // $arrayPostData['messages'][2]['contents']['body']['contents'][1]['margin'] =  "lg";
-          // $arrayPostData['messages'][2]['contents']['body']['contents'][1]['contents']['type'] =  "text";
-          // $arrayPostData['messages'][2]['contents']['body']['contents'][1]['contents']['text'] =  "Merchant";
-          // $arrayPostData['messages'][2]['contents']['body']['contents'][1]['contents']['align'] =  "start";
-          // $arrayPostData['messages'][2]['contents']['body']['contents'][1]['contents']['align'] =  "start";
-          // $arrayPostData['messages'][2]['contents']['body']['contents'][1]['contents']['color'] =  "#C3C3C3";
+
+          $arrayPostData['messages'][2]['contents']['body']['type'] =  "box";
+          $arrayPostData['messages'][2]['contents']['body']['layout'] =  "vertical";
+          $arrayPostData['messages'][2]['contents']['body']['contents'][0]['type'] =  "separator";
+          $arrayPostData['messages'][2]['contents']['body']['contents'][0]['color'] =  "#C3C3C3";
+          
+          $arrayPostData['messages'][2]['contents']['body']['contents'][1]['type'] =  "box";
+          $arrayPostData['messages'][2]['contents']['body']['contents'][1]['layout'] =  "baseline";
+          $arrayPostData['messages'][2]['contents']['body']['contents'][1]['margin'] =  "lg";
+          $arrayPostData['messages'][2]['contents']['body']['contents'][1]['contents']['type'] =  "text";
+          $arrayPostData['messages'][2]['contents']['body']['contents'][1]['contents']['text'] =  "Merchant";
+          $arrayPostData['messages'][2]['contents']['body']['contents'][1]['contents']['align'] =  "start";
+          $arrayPostData['messages'][2]['contents']['body']['contents'][1]['contents']['align'] =  "start";
+          $arrayPostData['messages'][2]['contents']['body']['contents'][1]['contents']['color'] =  "#C3C3C3";
 
           $arrayPostData['messages'][2]['contents']['footer']['type'] =  "box";
           $arrayPostData['messages'][2]['contents']['footer']['layout'] =  "horizontal";
