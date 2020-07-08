@@ -110,7 +110,7 @@ $arrayHeader[] = "Authorization: Bearer {$token}";
       echo true;
    }elseif ($message == "flex") {
     
-      $arrayPostData = [
+      $arrayPostData['message'] = [
         "type" => "flex",
         "altText" => "Hello Flex Message",
         "contents" => [
@@ -229,7 +229,7 @@ $arrayHeader[] = "Authorization: Bearer {$token}";
         ]
       ];
       
-      pushMsgjson($arrayHeader,$arrayPostData);
+      pushMsg($arrayHeader,$arrayPostData);
    }
    function pushMsg($arrayHeader,$arrayPostData){
       $strUrl = "https://api.line.me/v2/bot/message/push";
