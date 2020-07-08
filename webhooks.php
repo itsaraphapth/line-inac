@@ -220,6 +220,8 @@ if($message == "ขอราคา"){
 
 }
 $input = $request_array['type'];
+echo $input;
+die();
 if (trim($input = "message")) {
 	$json = [
 		"type" => "flex",
