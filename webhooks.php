@@ -176,7 +176,7 @@ if(trim($message) == "ขอราคา"){
 		"originalContentUrl"=> "https://i.pinimg.com/originals/cc/22/d1/cc22d10d9096e70fe3dbe3be2630182b.jpg",
 		"previewImageUrl"=> "https://i.pinimg.com/originals/cc/22/d1/cc22d10d9096e70fe3dbe3be2630182b.jpg"
 	];
-}elseif(trim($message) == "ซอยข๋อยแหน่"){
+}elseif(trim($message) == "ซอยข่อยแหน่"){
 	$json = [
 		"type" => "text",
 		"text" => "อิหยังหวะ"
