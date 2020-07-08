@@ -13,7 +13,7 @@
  
     // var_dump($request_array);
     // echo $request_array[0]['events']['type'];
-    echo sizeof($request_array[0]['events']);
+    echo sizeof($request_array);
     die();
     $input = $request_array[0]['events']['type'];
     
