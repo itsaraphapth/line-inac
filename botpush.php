@@ -234,6 +234,7 @@ $arrayHeader[] = "Authorization: Bearer {$token}";
         'messages' => [$arrayPostData]
     ];
     $post_body = json_encode($data, JSON_UNESCAPED_UNICODE);
+    die();
     $send_result =   pushMsgjson($arrayHeader,$post_body);
     echo "Result: ".$send_result."\r\n";
    }
