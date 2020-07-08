@@ -53,8 +53,7 @@ $arrayHeader[] = "Authorization: Bearer {$token}";
           // die();
       pushMsg($arrayHeader,$arrayPostData);
    }elseif ($message == "flex") {
-     echo $message;
-     die();
+    
       $arrayPostData = [
         "type" => "flex",
         "altText" => "Hello Flex Message",
@@ -173,6 +172,8 @@ $arrayHeader[] = "Authorization: Bearer {$token}";
           ]
         ]
       ];
+      echo $arrayPostData;
+      die();
       pushMsgjson($arrayHeader,$arrayPostData);
    }
    function pushMsg($arrayHeader,$arrayPostData){
