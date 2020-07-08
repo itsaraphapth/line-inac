@@ -81,10 +81,9 @@ $arrayHeader[] = "Authorization: Bearer {$token}";
           $arrayPostData['messages'][2]['contents']['body']['contents'][1]['layout'] =  "baseline";
           $arrayPostData['messages'][2]['contents']['body']['contents'][1]['margin'] =  "lg";
           $arrayPostData['messages'][2]['contents']['body']['contents'][1]['contents'][0]['type'] =  "text";
-          $arrayPostData['messages'][2]['contents']['body']['contents'][1]['contents'][0]['text'] =  "Merchant";
+          $arrayPostData['messages'][2]['contents']['body']['contents'][1]['contents'][0]['text'] =  "เสาเข็ม";
           $arrayPostData['messages'][2]['contents']['body']['contents'][1]['contents'][0]['align'] =  "start";
-          $arrayPostData['messages'][2]['contents']['body']['contents'][1]['contents'][0]['align'] =  "start";
-          $arrayPostData['messages'][2]['contents']['body']['contents'][1]['contents'][0]['color'] =  "#C3C3C3";
+          $arrayPostData['messages'][2]['contents']['body']['contents'][1]['contents'][0]['color'] =  "#000000";
           
           $arrayPostData['messages'][2]['contents']['body']['contents'][1]['contents'][1]['type'] =  "text";
           $arrayPostData['messages'][2]['contents']['body']['contents'][1]['contents'][1]['text'] =  "100 ชิ้น";
