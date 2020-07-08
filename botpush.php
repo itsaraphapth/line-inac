@@ -45,7 +45,7 @@ $arrayHeader[] = "Authorization: Bearer {$token}";
         if($message == "message"){
           $arrayPostData['to'] = $request_array['id'];
           $arrayPostData['messages'][0]['type'] = "text";
-          $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา";
+          $arrayPostData['messages'][0]['text'] = "เอกสาร ".$request_array['moduletype']." ใหม่ รออนุมัติ";
           $arrayPostData['messages'][1]['type'] = "sticker";
           $arrayPostData['messages'][1]['packageId'] = "2";
           $arrayPostData['messages'][1]['stickerId'] = "34";
@@ -101,10 +101,11 @@ $arrayHeader[] = "Authorization: Bearer {$token}";
           $arrayPostData['messages'][2]['contents']['footer']['contents'][0]['color'] =  "#0084B6";
           $arrayPostData['messages'][2]['contents']['footer']['contents'][0]['action']['type'] =  "uri";
           $arrayPostData['messages'][2]['contents']['footer']['contents'][0]['action']['label'] =  "View Detail";
-          $arrayPostData['messages'][2]['contents']['footer']['contents'][0]['action']['uri'] =  "https://google.co.th/";
+          $arrayPostData['messages'][2]['contents']['footer']['contents'][0]['action']['uri'] =  "http://cm.thecreatorshq.com/cm_uat/";
           // var_dump($arrayPostData);
           // die();
       pushMsg($arrayHeader,$arrayPostData);
+      echo true;
    }elseif ($message == "flex") {
     
       $arrayPostData = [
@@ -246,9 +247,9 @@ $arrayHeader[] = "Authorization: Bearer {$token}";
 
     $data = [
       'messages' => [$arrayPostData]
-  ];
-  $post_body = json_encode($data, JSON_UNESCAPED_UNICODE);
-  echo $post_body;
+    ];
+    $post_body = json_encode($data, JSON_UNESCAPED_UNICODE);
+    echo $post_body;
       $strUrl = "https://api.line.me/v2/bot/message/push";
       $ch = curl_init();
       curl_setopt($ch, CURLOPT_URL,$strUrl);
