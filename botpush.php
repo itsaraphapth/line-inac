@@ -238,7 +238,7 @@ $arrayHeader[] = "Authorization: Bearer {$token}";
     echo "Result: ".$send_result."\r\n";
    }
    function pushMsg($arrayHeader,$post_body){
-     print_r($post_body);
+     var_dump($post_body);
      die();
       $strUrl = "https://api.line.me/v2/bot/message/push";
       $ch = curl_init();
