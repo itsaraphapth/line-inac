@@ -24,19 +24,46 @@
   
 $request = file_get_contents('php://input');   // Get request content
 $request_array = json_decode($request, true);   // Decode JSON to Array
-    // if(isset($_POST['to']) && trim($_POST['to']) != '' && isset($_POST['text']) && trim($_POST['text']) != ''){
-      if(trim($request_array['id']) != ''){
-      // check for send message only
-      $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($request_array['text']);
-      $response = $bot->pushMessage($request_array['id'], $textMessageBuilder);
+$arrayHeader = array();
+   $arrayHeader[] = "Content-Type: application/json";
+   $arrayHeader[] = "Authorization: Bearer {$token}";
+    // // if(isset($_POST['to']) && trim($_POST['to']) != '' && isset($_POST['text']) && trim($_POST['text']) != ''){
+    //   if(trim($request_array['id']) != ''){
+    //   // check for send message only
+    //   $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($request_array['text']);
+    //   $response = $bot->pushMessage($request_array['id'], $textMessageBuilder);
      
-      // check status sending line api
-      if($response->isSucceeded()){
-        echo "true";
-        return;
-      }else{
-        echo $response->getHTTPStatus . ' ' . $response->getRawBody();
-      }
+    //   // check status sending line api
+    //   if($response->isSucceeded()){
+    //     echo "true";
+    //     return;
+    //   }else{
+    //     echo "false";
+    //   }
+    $message = $request_array['type'];
+    if($message == "message"){
+      $arrayPostData['to'] = $request_array['id'];
+      $arrayPostData['messages'][0]['type'] = "text";
+      $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา";
+      $arrayPostData['messages'][1]['type'] = "sticker";
+      $arrayPostData['messages'][1]['packageId'] = "2";
+      $arrayPostData['messages'][1]['stickerId'] = "34";
+      pushMsg($arrayHeader,$arrayPostData);
+   }
+   function pushMsg($arrayHeader,$arrayPostData){
+      $strUrl = "https://api.line.me/v2/bot/message/push";
+      $ch = curl_init();
+      curl_setopt($ch, CURLOPT_URL,$strUrl);
+      curl_setopt($ch, CURLOPT_HEADER, false);
+      curl_setopt($ch, CURLOPT_POST, true);
+      curl_setopt($ch, CURLOPT_HTTPHEADER, $arrayHeader);
+      curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($arrayPostData));
+      curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+      curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+      $result = curl_exec($ch);
+      curl_close ($ch);
+   }
+   exit;
   
     }else{
   
