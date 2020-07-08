@@ -216,6 +216,108 @@ if(trim($message) == "ขอราคา"){
 		"type"=> "text",
 		"text" => $request_array['events'][0]['source']['userId']
 	];
+}elseif(trim($message) == "บอลซื้อกิน"){
+	$json = [
+		"type" => "flex",
+		"altText" => "บอลค้างค่านวด",
+		"contents" => [
+			"type" => "bubble",
+			"direction" => "ltr",
+			"header" => [
+				"type" => "box",
+				"layout" => "vertical",
+				"contents" => [
+				[
+					"type" => "text",
+					"text" => "บอลค้างค่านวด",
+					"size" => "lg",
+					"align" => "start",
+					"weight" => "bold",
+					"color" => "#009813"
+				],
+				[
+					"type" => "text",
+					"text" => "฿ 1,500.00",
+					"size" => "3xl",
+					"weight" => "bold",
+					"color" => "#000000"
+				],
+				[
+					"type" => "text",
+					"text" => "ไม่ยอมจ่าย",
+					"size" => "lg",
+					"weight" => "bold",
+					"color" => "#000000"
+				],
+				[
+					"type" => "text",
+					"text" => "2019.02.14 21:47 (GMT+0700)",
+					"size" => "xs",
+					"color" => "#B2B2B2"
+				],
+				[
+					"type" => "text",
+					"text" => "กรุณาจ่าย.",
+					"margin" => "lg",
+					"size" => "lg",
+					"color" => "#000000"
+				]
+				]
+			],
+			"body" => [
+				"type" => "box",
+				"layout" => "vertical",
+				"contents" => [
+				[
+					"type" => "separator",
+					"color" => "#C3C3C3"
+				],
+				[
+					"type" => "box",
+					"layout" => "baseline",
+					"margin" => "lg",
+					"contents" => [
+					[
+						"type" => "text",
+						"text" => "ซื่อผู้ชาย",
+						"align" => "start",
+						"color" => "#C3C3C3"
+					],
+					[
+						"type" => "text",
+						"text" => "1 ช.ม.",
+						"align" => "end",
+						"color" => "#000000"
+					]
+					]
+				],
+				[
+					"type" => "separator",
+					"margin" => "lg",
+					"color" => "#C3C3C3"
+				]
+				]
+			],
+			"footer" => [
+				"type" => "box",
+				"layout" => "horizontal",
+				"contents" => [
+				[
+					"type" => "text",
+					"text" => "View Details",
+					"size" => "lg",
+					"align" => "start",
+					"color" => "#0084B6",
+					"action" => [
+					"type" => "uri",
+					"label" => "View Details",
+					"uri" => "https://i.imgur.com/RAewXpl.jpg"
+					]
+				]
+				]
+			]
+		]
+	];
 }else{
 
 }
