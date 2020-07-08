@@ -172,7 +172,7 @@ $arrayHeader[] = "Authorization: Bearer {$token}";
           ]
         ]
       ];
-      echo $arrayPostData;
+      var_dump($arrayPostData);
       die();
       pushMsgjson($arrayHeader,$arrayPostData);
    }
