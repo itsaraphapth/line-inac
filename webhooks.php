@@ -220,6 +220,7 @@ if($message == "ขอราคา"){
 
 }
 var_dump($request_array);
+echo "<p>".$request_array['events']['type']."</p>";
 die();
 $input = $request_array['type'];
 
