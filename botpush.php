@@ -113,7 +113,7 @@ $arrayHeader[] = "Authorization: Bearer {$token}";
       echo true;
    }elseif ($message == "flex") {
     
-      $arrayPostData['messages'] = [
+      $arrayPostData = [
         "type" => "flex",
         "altText" => "Hello Flex Message",
         "contents" => [
@@ -159,80 +159,11 @@ $arrayHeader[] = "Authorization: Bearer {$token}";
               "color" => "#000000"
             ]
             ]
-          ],
-          "body" => [
-            "type" => "box",
-            "layout" => "vertical",
-            "contents" => [
-            [
-              "type" => "separator",
-              "color" => "#C3C3C3"
-            ],
-            [
-              "type" => "box",
-              "layout" => "baseline",
-              "margin" => "lg",
-              "contents" => [
-              [
-                "type" => "text",
-                "text" => "Merchant",
-                "align" => "start",
-                "color" => "#C3C3C3"
-              ],
-              [
-                "type" => "text",
-                "text" => "BTS 01",
-                "align" => "end",
-                "color" => "#000000"
-              ]
-              ]
-            ],
-            [
-              "type" => "box",
-              "layout" => "baseline",
-              "margin" => "lg",
-              "contents" => [
-              [
-                "type" => "text",
-                "text" => "New balance",
-                "color" => "#C3C3C3"
-              ],
-              [
-                "type" => "text",
-                "text" => "฿ 45.57",
-                "align" => "end"
-              ]
-              ]
-            ],
-            [
-              "type" => "separator",
-              "margin" => "lg",
-              "color" => "#C3C3C3"
-            ]
-            ]
-          ],
-          "footer" => [
-            "type" => "box",
-            "layout" => "horizontal",
-            "contents" => [
-            [
-              "type" => "text",
-              "text" => "View Details",
-              "size" => "lg",
-              "align" => "start",
-              "color" => "#0084B6",
-              "action" => [
-              "type" => "uri",
-              "label" => "View Details",
-              "uri" => "https://google.co.th/"
-              ]
-            ]
-            ]
           ]
         ]
       ];
       
-      pushMsg($arrayHeader,$arrayPostData['messages']);
+      pushMsg($arrayHeader,$arrayPostData);
    }
    function pushMsg($arrayHeader,$arrayPostData){
       $strUrl = "https://api.line.me/v2/bot/message/push";
