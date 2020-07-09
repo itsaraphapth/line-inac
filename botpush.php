@@ -45,13 +45,12 @@ $arrayHeader[] = "Authorization: Bearer {$token}";
         if($message == "message"){
           $arrayPostData['to'] = $request_array['id'];
           $arrayPostData['messages'][0]['type'] = "text";
-          // $arrayPostData['messages'][0]['text'] = "เอกสาร ".$request_array['moduletype']." ใหม่ รออนุมัติ";
           $arrayPostData['messages'][0]['text'] = $request_array['text'];
           $arrayPostData['messages'][1]['type'] = "sticker";
           $arrayPostData['messages'][1]['packageId'] = "2";
+
           $arrayPostData['messages'][1]['stickerId'] = "34";
           $arrayPostData['messages'][2]['type'] = "flex";
-          // $arrayPostData['messages'][2]['altText'] = "เอกสาร ".$request_array['moduletype']." ใหม่ รออนุมัติ";
           $arrayPostData['messages'][2]['altText'] = $request_array['text'];
           $arrayPostData['messages'][2]['contents']['type'] =  "bubble";
           $arrayPostData['messages'][2]['contents']['direction'] =  "ltr";
@@ -106,8 +105,8 @@ $arrayHeader[] = "Authorization: Bearer {$token}";
           $arrayPostData['messages'][2]['contents']['footer']['contents'][0]['action']['type'] =  "uri";
           $arrayPostData['messages'][2]['contents']['footer']['contents'][0]['action']['label'] =  "View Detail";
           $arrayPostData['messages'][2]['contents']['footer']['contents'][0]['action']['uri'] =  "http://cm.thecreatorshq.com/cm_uat/";
-          // var_dump($arrayPostData);
-          // die();
+          var_dump($arrayPostData);
+          die();
       pushMsg($arrayHeader,$arrayPostData);
       echo true;
    }elseif ($message == "flex") {
