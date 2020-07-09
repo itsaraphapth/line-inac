@@ -163,7 +163,7 @@ $arrayHeader[] = "Authorization: Bearer {$token}";
         ]
       ];
       
-      pushMsg($arrayHeader,$arrayPostData);
+      pushMsgjson($arrayHeader,$arrayPostData);
    }
    function pushMsg($arrayHeader,$arrayPostData){
       $strUrl = "https://api.line.me/v2/bot/message/push";
