@@ -113,57 +113,85 @@ $arrayHeader[] = "Authorization: Bearer {$token}";
       echo true;
    }elseif ($message == "flex") {
     
-      $arrayPostData = [
-        "type" => "flex",
-        "altText" => "Hello Flex Message",
-        "contents" => [
-          "type" => "bubble",
-          "direction" => "ltr",
-          "header" => [
-            "type" => "box",
-            "layout" => "vertical",
-            "contents" => [
-            [
-              "type" => "text",
-              "text" => "บอลติดหนี้",
-              "size" => "lg",
-              "align" => "start",
-              "weight" => "bold",
-              "color" => "#009813"
-            ],
-            [
-              "type" => "text",
-              "text" => "฿ 100.00",
-              "size" => "3xl",
-              "weight" => "bold",
-              "color" => "#000000"
-            ],
-            [
-              "type" => "text",
-              "text" => "Rabbit Line Pay",
-              "size" => "lg",
-              "weight" => "bold",
-              "color" => "#000000"
-            ],
-            [
-              "type" => "text",
-              "text" => "2019.02.14 21:47 (GMT+0700)",
-              "size" => "xs",
-              "color" => "#B2B2B2"
-            ],
-            [
-              "type" => "text",
-              "text" => "กรุณาจ่าย.",
-              "margin" => "lg",
-              "size" => "lg",
-              "color" => "#000000"
-            ]
-            ]
-          ]
-        ]
-      ];
+      // $arrayPostData = [
+      //   "type" => "flex",
+      //   "altText" => "Hello Flex Message",
+      //   "contents" => [
+      //     "type" => "bubble",
+      //     "direction" => "ltr",
+      //     "header" => [
+      //       "type" => "box",
+      //       "layout" => "vertical",
+      //       "contents" => [
+      //       [
+      //         "type" => "text",
+      //         "text" => "บอลติดหนี้",
+      //         "size" => "lg",
+      //         "align" => "start",
+      //         "weight" => "bold",
+      //         "color" => "#009813"
+      //       ],
+      //       [
+      //         "type" => "text",
+      //         "text" => "฿ 100.00",
+      //         "size" => "3xl",
+      //         "weight" => "bold",
+      //         "color" => "#000000"
+      //       ],
+      //       [
+      //         "type" => "text",
+      //         "text" => "Rabbit Line Pay",
+      //         "size" => "lg",
+      //         "weight" => "bold",
+      //         "color" => "#000000"
+      //       ],
+      //       [
+      //         "type" => "text",
+      //         "text" => "2019.02.14 21:47 (GMT+0700)",
+      //         "size" => "xs",
+      //         "color" => "#B2B2B2"
+      //       ],
+      //       [
+      //         "type" => "text",
+      //         "text" => "กรุณาจ่าย.",
+      //         "margin" => "lg",
+      //         "size" => "lg",
+      //         "color" => "#000000"
+      //       ]
+      //       ]
+      //     ]
+      //   ]
+      // ];
+     $arrayPostData = [
+                        "to" => $request_array['id'],
+                        "messages" => [
+                          [
+                            "type" => "flex",
+                            "altText" => "This is a Flex Message",
+                            "contents" => [
+                              "type" => "bubble",
+                              "body" => [
+                                "type" => "box",
+                                "layout" => "vertical",
+                                "contents" => [
+                                  [
+                                    "type" => "button",
+                                    "style" => "primary",
+                                    "height" => "sm",
+                                    "action" => [
+                                      "type" => "uri",
+                                      "label" => "Add to Cart",
+                                      "uri" => "https://developers.line.me"
+                                    ]
+                                  ]
+                                ]
+                              ]
+                            ]
+                          ]
+                        ]
+                      ];
       
-      pushMsgjson($arrayHeader,$arrayPostData);
+                      pushMsgjson($arrayHeader,$arrayPostData);
    }
    function pushMsg($arrayHeader,$arrayPostData){
       $strUrl = "https://api.line.me/v2/bot/message/push";
@@ -185,7 +213,7 @@ $arrayHeader[] = "Authorization: Bearer {$token}";
       'messages' => [$arrayPostData]
     ];
     $post_body = json_encode($data, JSON_UNESCAPED_UNICODE);
-    echo $post_body;
+    // echo $data;
       $strUrl = "https://api.line.me/v2/bot/message/push";
       $ch = curl_init();
       curl_setopt($ch, CURLOPT_URL,$strUrl);
