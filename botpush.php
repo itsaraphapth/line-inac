@@ -62,11 +62,13 @@ $arrayHeader[] = "Authorization: Bearer {$token}";
           $arrayPostData['messages'][2]['contents']['header']['contents'][0]['align'] =  "start";
           $arrayPostData['messages'][2]['contents']['header']['contents'][0]['weight'] =  "bold";
           $arrayPostData['messages'][2]['contents']['header']['contents'][0]['color'] =  "#009813";
+
           $arrayPostData['messages'][2]['contents']['header']['contents'][1]['type'] =  "text";
           $arrayPostData['messages'][2]['contents']['header']['contents'][1]['text'] =  $request_array['price'];
           $arrayPostData['messages'][2]['contents']['header']['contents'][1]['size'] =  "3xl";
           $arrayPostData['messages'][2]['contents']['header']['contents'][1]['weight'] =  "bold";
           $arrayPostData['messages'][2]['contents']['header']['contents'][1]['color'] =  "#000000";
+
           $arrayPostData['messages'][2]['contents']['header']['contents'][2]['type'] =  "text";
           $arrayPostData['messages'][2]['contents']['header']['contents'][2]['text'] =  $request_array['pay'];
           $arrayPostData['messages'][2]['contents']['header']['contents'][2]['size'] =  "lg";
@@ -105,8 +107,8 @@ $arrayHeader[] = "Authorization: Bearer {$token}";
           $arrayPostData['messages'][2]['contents']['footer']['contents'][0]['action']['type'] =  "uri";
           $arrayPostData['messages'][2]['contents']['footer']['contents'][0]['action']['label'] =  "View Detail";
           $arrayPostData['messages'][2]['contents']['footer']['contents'][0]['action']['uri'] =  "http://cm.thecreatorshq.com/cm_uat/";
-          var_dump($arrayPostData);
-          die();
+          // var_dump($arrayPostData);
+          // die();
       pushMsg($arrayHeader,$arrayPostData);
       echo true;
    }elseif ($message == "flex") {
