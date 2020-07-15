@@ -321,8 +321,8 @@ if(trim($message) == "ขอราคา"){
 }elseif(trim($message) == "ขอรูปแจ๋วแหวว"){
 	$json = [
 		"type"=> "image",
-		"originalContentUrl"=> "https://imgur.com/WmOfLQY",
-		"previewImageUrl"=> "https://imgur.com/WmOfLQY"
+		"originalContentUrl"=> "https://i.imgur.com/WmOfLQY.jpg",
+		"previewImageUrl"=> "https://i.imgur.com/WmOfLQY.jpg"
 	];
 }else{
 
