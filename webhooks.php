@@ -318,6 +318,12 @@ if(trim($message) == "ขอราคา"){
 			]
 		]
 	];
+}elseif(trim($message) == "แจ๋วแหวว"){
+	$json = [
+		"type"=> "image",
+		"originalContentUrl"=> "https://imgur.com/WmOfLQY",
+		"previewImageUrl"=> "https://imgur.com/WmOfLQY"
+	];
 }else{
 
 }
