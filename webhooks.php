@@ -329,6 +329,11 @@ if(trim($message) == "ขอราคา"){
 		"type" => "text",
 		"text" => "https://wesingapp.com/user/609c9c86222e358f334d/song/JFmsFQ6JjFdXv6sv-?lang=en&ws_channel=copylink"
 	];
+}elseif(trim($message) == "ขอดพลงใหม่หน่อยครับ"){
+	$json = [
+		"type" => "text",
+		"text" => "https://wesingapp.com/user/609c9c86222e358f334d/song/GlUulazGMPwMvzF0-?lang=th&g_f=personal"
+	];
 }else{
 
 }
