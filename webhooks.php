@@ -324,6 +324,11 @@ if(trim($message) == "ขอราคา"){
 		"originalContentUrl"=> "https://i.imgur.com/WmOfLQY.jpg",
 		"previewImageUrl"=> "https://i.imgur.com/WmOfLQY.jpg"
 	];
+}elseif(trim($message) == "อยู่อย่างเหงาๆ"){
+	$json = [
+		"type" => "text",
+		"text" => "https://wesingapp.com/user/609c9c86222e358f334d/song/JFmsFQ6JjFdXv6sv-?lang=en&ws_channel=copylink"
+	];
 }else{
 
 }
