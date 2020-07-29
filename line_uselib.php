@@ -61,6 +61,7 @@ if(isset($_SESSION['ses_login_userData_val']) && $_SESSION['ses_login_userData_v
     echo "<hr>";
     echo "Line UserID: ".$lineUserData['sub']."<br>";
     echo "Line Display Name: ".$lineUserData['name']."<br>";
+    echo "Line Display Name: ".$lineUserData['email']."<br>";
     echo '<img style="width:100px;" src="'.$lineUserData['picture'].'" /><br>';
 }
  
