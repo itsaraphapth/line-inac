@@ -102,7 +102,7 @@ if(isset($_SESSION['ses_login_userData_val']) && $_SESSION['ses_login_userData_v
     }
     
     echo "</select>";
-    echo "<a class='btn btn-success' href='userupdateform.php?compcode=$row[0]'>edit</a>"
+    echo "<a class='btn btn-success' href='#'>edit</a>"
     // echo "</table>";
     //5. close connection
     mysqli_close($con);
@@ -170,7 +170,7 @@ if(isset($_POST['lineLogout'])){
     }
     echo '
     <form method="post">
-    <button type="submit" name="lineLogin">LINE Login</button>
+    <button class="btn btn-primary" type="submit" name="lineLogin">LINE Login</button>
     </form>   
     ';
     $LineLogin->redirect("line_uselib.php");
