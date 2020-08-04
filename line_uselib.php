@@ -170,7 +170,7 @@ if(isset($_POST['lineLogout'])){
     }
     echo '
     <form method="post">
-    <button class="btn btn-primary" type="submit" name="lineLogin">LINE Login</button>
+    <button type="submit" name="lineLogin">LINE Login</button>
     </form>   
     ';
     $LineLogin->redirect("line_uselib.php");
