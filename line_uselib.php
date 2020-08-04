@@ -67,23 +67,27 @@ if(isset($_SESSION['ses_login_userData_val']) && $_SESSION['ses_login_userData_v
     //3. execute the query. 
     $result = mysqli_query($con, $query); 
     //4 . แสดงข้อมูลที่ query ออกมา: 
-
+    
     //ใช้ตารางในการจัดข้อมูล
     echo "<table border='1' align='center' width='500'>";
     //หัวข้อตาราง
-    echo "<tr align='center' bgcolor='#CCCCCC'><td>รหัส</td><td>Uername</td><td>ชื่อ</td><td>นามสกุล</td><td>อีเมล์</td><td>แก้ไข</td><td>ลบ</td></tr>";
+    // echo "<tr align='center' bgcolor='#CCCCCC'><td>รหัส</td><td>Uername</td><td>ชื่อ</td><td>นามสกุล</td><td>อีเมล์</td><td>แก้ไข</td><td>ลบ</td></tr>";
+    echo "<select>";
     while($row = mysqli_fetch_array($result)) { 
-    echo "<tr>";
-    echo "<td>" .$row["compcode"] .  "</td> "; 
-    echo "<td>" .$row["company_name"] .  "</td> ";  
-    //แก้ไขข้อมูลส่่ง member_id ที่จะแก้ไขไปที่ฟอร์ม
-    echo "<td><a href='userupdateform.php?compcode=$row[0]'>edit</a></td> ";
+        echo "<option value=".$row["compcode"].">".$row["company_name"] ."</option>";
+    // // echo "<tr>";
+    // echo "<td>" .$row["compcode"] .  "</td> "; 
+    // echo "<td>" .$row["company_name"] .  "</td> ";  
+    // //แก้ไขข้อมูลส่่ง member_id ที่จะแก้ไขไปที่ฟอร์ม
+    // echo "<td><a href='userupdateform.php?compcode=$row[0]'>edit</a></td> ";
     
-    //ลบข้อมูล
-    echo "<td><a href='UserDelete.php?compcode=$row[0]' onclick=\"return confirm('Do you want to delete this record? !!!')\">del</a></td> ";
-    echo "</tr>";
+    // //ลบข้อมูล
+    // echo "<td><a href='UserDelete.php?compcode=$row[0]' onclick=\"return confirm('Do you want to delete this record? !!!')\">del</a></td> ";
+    // // echo "</tr>";
     }
-    echo "</table>";
+    
+    echo "</select>";
+    // echo "</table>";
     //5. close connection
     mysqli_close($con);
     // Close DB
