@@ -69,7 +69,7 @@ if(isset($_SESSION['ses_login_userData_val']) && $_SESSION['ses_login_userData_v
     //4 . แสดงข้อมูลที่ query ออกมา: 
     
     //ใช้ตารางในการจัดข้อมูล
-    echo "<table border='1' align='center' width='500'>";
+    // echo "<table border='1' align='center' width='500'>";
     //หัวข้อตาราง
     // echo "<tr align='center' bgcolor='#CCCCCC'><td>รหัส</td><td>Uername</td><td>ชื่อ</td><td>นามสกุล</td><td>อีเมล์</td><td>แก้ไข</td><td>ลบ</td></tr>";
     echo "<select>";
