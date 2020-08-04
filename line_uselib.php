@@ -39,20 +39,20 @@ if($LineLogin->verifyToken($accToken)){
 }
  
  
-echo "<pre>";
+// echo "<pre>";
 // Status Token Check with Result 
 //$statusToken = $LineLogin->verifyToken($accToken, true);
 //print_r($statusToken);
  
  
 //////////////////////////
-echo "<hr>";
+// echo "<hr>";
 // GET LINE USERID FROM USER PROFILE
 //$userID = $LineLogin->userProfile($accToken);
 //echo $userID;
  
 //////////////////////////
-echo "<hr>";
+// echo "<hr>";
 // GET LINE USER PROFILE 
 $userInfo = $LineLogin->userProfile($accToken,true);
 if(!is_null($userInfo) && is_array($userInfo) && array_key_exists('userId',$userInfo)){
