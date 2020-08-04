@@ -146,7 +146,7 @@ echo "<hr>";
 if($LineLogin->verifyToken($accToken)){
 ?>
 <form method="post">
-<button type="submit" name="lineLogout">LINE Logout</button>
+<button type="submit" name="lineLogout">Logout</button>
 </form>
 <?php }else{ ?>
 <form method="post">
@@ -170,7 +170,7 @@ if(isset($_POST['lineLogout'])){
     }
     echo '
     <form method="post">
-    <button class="btn btn-primary" type="submit" name="lineLogin">LINE Login</button>
+    <button type="submit" name="lineLogin">LINE Login</button>
     </form>   
     ';
     $LineLogin->redirect("line_uselib.php");
