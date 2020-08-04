@@ -59,7 +59,7 @@ if(isset($_SESSION['ses_login_userData_val']) && $_SESSION['ses_login_userData_v
     $lineUserData = json_decode($_SESSION['ses_login_userData_val'],true);
     print_r($lineUserData); 
     
-    $con= mysqli_connect("203.150.202.108","sapicon","Icon@2020","cm_uat") or die("Error: " . mysqli_error($con));
+    $con= mysqli_connect("203.150.202.108","root","Icon@2020","cm_uat") or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
 
     //2. query ข้อมูลจากตาราง: 
