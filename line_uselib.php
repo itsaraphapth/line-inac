@@ -116,7 +116,7 @@ if(isset($_SESSION['ses_login_userData_val']) && $_SESSION['ses_login_userData_v
     echo "<a class='btn btn-success' href='#'>edit</a>";
     // echo "</table>";
     //5. close connection
-    mysqli_close($con);
+    mysqli_close($conn);
     // Close DB
     // echo "<hr>";
     // echo "Line UserID: ".$lineUserData['sub']."<br>";
