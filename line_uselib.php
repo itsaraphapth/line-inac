@@ -188,7 +188,7 @@ if(isset($_POST['lineLogout'])){
 }
 ?>
 <script>
-$("#compcode").on('change',function(){
+$("#compcode").change(function(){
     var compcode = $("#compcode").val();
     console.log(compcode);
 });
