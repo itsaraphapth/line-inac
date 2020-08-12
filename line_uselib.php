@@ -88,7 +88,7 @@ if(isset($_SESSION['ses_login_userData_val']) && $_SESSION['ses_login_userData_v
     // echo "<table border='1' align='center' width='500'>";
     //หัวข้อตาราง
     // echo "<tr align='center' bgcolor='#CCCCCC'><td>รหัส</td><td>Uername</td><td>ชื่อ</td><td>นามสกุล</td><td>อีเมล์</td><td>แก้ไข</td><td>ลบ</td></tr>";
-    echo "<select class='form-control'>";
+    echo "<select id='compcode' class='form-control'>";
     while($row = mysqli_fetch_array($result)) { 
         echo "<option value=".$row["compcode"].">".$row["company_name"] ."</option>";
         
@@ -188,7 +188,10 @@ if(isset($_POST['lineLogout'])){
 }
 ?>
 <script>
-console.log("dd");
+$("#compcode").on('change',function(){
+    var compcode = $("#compcode").val();
+    console.log(compcode);
+});
 </script>
 </body>
 </html>
