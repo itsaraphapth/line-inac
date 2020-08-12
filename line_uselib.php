@@ -90,9 +90,9 @@ if(isset($_SESSION['ses_login_userData_val']) && $_SESSION['ses_login_userData_v
     } ?>
 <select name="comp_code" id="compID" class="form-control">
                             <option value="">เลือกcomp</option>
-                            <?php while($result = mysqli_fetch_assoc($query)): ?>
+                            <?php while($result = mysqli_fetch_assoc($query)){ ?>
                                 <option value="<?=$result['m_code']?>"><?=$result['m_name']?></option>
-                            <?php endwhile; ?>
+                            <?php } ?>
                         </select>
 <?php 
     // // echo "<tr>";
