@@ -188,9 +188,10 @@ if(isset($_POST['lineLogout'])){
 }
 ?>
 <script>
-$("#compcode").change(function(){
-    var compcode = $("#compcode").val();
-    console.log(compcode);
+$("#compcode").click(function(){
+    // var compcode = $("#compcode").val();
+    // console.log(compcode);
+    console.log('ddddd');
 });
 </script>
 </body>
