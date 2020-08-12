@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="dist/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
   <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="dist/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
@@ -76,8 +76,7 @@ if(isset($_SESSION['ses_login_userData_val']) && $_SESSION['ses_login_userData_v
     $lineUserData = json_decode($_SESSION['ses_login_userData_val'],true);
     // print_r($lineUserData); 
     // connect DB
-    $con= mysqli_connect("203.150.202.108","root","Icon@2020","cm_prd") or die("Error: " . mysqli_error($con));
-    mysqli_query($con, "SET NAMES 'utf8' ");
+    include('connect.php');
 
     //2. query ข้อมูลจากตาราง: 
     $query = "SELECT * FROM company ORDER BY company_id asc" or die("Error:" . mysqli_error()); 
