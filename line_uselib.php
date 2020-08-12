@@ -89,6 +89,7 @@ if(isset($_SESSION['ses_login_userData_val']) && $_SESSION['ses_login_userData_v
         
     } ?>
      <form>
+     <input type="text" name="userID" id="user" value="<?=$lineUserData['sub'];?>">
         <select name="comp_code" id="compcode" class="form-control">
             <option value="">เลือกcomp</option>
             <?php while($result = mysqli_fetch_assoc($query)){ ?>
