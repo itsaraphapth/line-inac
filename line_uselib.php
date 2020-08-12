@@ -95,7 +95,7 @@ if(isset($_SESSION['ses_login_userData_val']) && $_SESSION['ses_login_userData_v
             <option value="<?=$result['compcode']?>"><?=$result['company_name']?></option>
         <?php } ?>
     </select>
-    <select name="amphure_id" id="member" class="form-control">
+    <select name="memID" id="member" class="form-control">
                             <option value="">เลือกอำเภอ</option>
                         </select>
                         </form>
