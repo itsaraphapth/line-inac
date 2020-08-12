@@ -90,6 +90,8 @@ if(isset($_SESSION['ses_login_userData_val']) && $_SESSION['ses_login_userData_v
     echo "<select class='form-control'>";
     while($row = mysqli_fetch_array($result)) { 
         echo "<option value=".$row["compcode"].">".$row["company_name"] ."</option>";
+        
+
     // // echo "<tr>";
     // echo "<td>" .$row["compcode"] .  "</td> "; 
     // echo "<td>" .$row["company_name"] .  "</td> ";  
@@ -101,6 +103,14 @@ if(isset($_SESSION['ses_login_userData_val']) && $_SESSION['ses_login_userData_v
     // // echo "</tr>";
     }
     
+    echo "</select>";
+    $com = "SELECT * FROM member where compcode = ".$row['compcode']."" or die("Error:" . mysqli_error()); 
+    //3. execute the query. 
+    $res = mysqli_query($con, $com); 
+    echo "<select class='form-control'>";
+    while($rows = mysqli_fetch_array($res)) { 
+        echo "<option value=".$rows["m_code"].">".$rows["m_name"] ."</option>";
+    }
     echo "</select>";
     echo "<a class='btn btn-success' href='#'>edit</a>";
     // echo "</table>";
