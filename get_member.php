@@ -1,7 +1,7 @@
 
 <?php
 include('connect.php');
-$sql = "elelct * from member WHERE compcode={$_GET['comp_code']}";
+$sql = "SELECT * FROM member WHERE compcode={$_GET['comp_code']}";
 $query = mysqli_query($conn, $sql);
  
 $json = array();
