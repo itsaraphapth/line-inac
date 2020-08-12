@@ -63,7 +63,7 @@ if($LineLogin->verifyToken($accToken)){
 // GET LINE USER PROFILE 
 $userInfo = $LineLogin->userProfile($accToken,true);
 if(!is_null($userInfo) && is_array($userInfo) && array_key_exists('userId',$userInfo)){
-    print_r($userInfo);
+    // print_r($userInfo);
 }
  
 //exit;
@@ -74,7 +74,7 @@ if(isset($_SESSION['ses_login_userData_val']) && $_SESSION['ses_login_userData_v
     $lineUserData = json_decode($_SESSION['ses_login_userData_val'],true);
     // print_r($lineUserData); 
     // connect DB
-    $con= mysqli_connect("203.150.202.108","root","Icon@2020","cm_uat") or die("Error: " . mysqli_error($con));
+    $con= mysqli_connect("203.150.202.108","root","Icon@2020","cm_prd") or die("Error: " . mysqli_error($con));
     mysqli_query($con, "SET NAMES 'utf8' ");
 
     //2. query ข้อมูลจากตาราง: 
@@ -107,10 +107,10 @@ if(isset($_SESSION['ses_login_userData_val']) && $_SESSION['ses_login_userData_v
     //5. close connection
     mysqli_close($con);
     // Close DB
-    echo "<hr>";
-    echo "Line UserID: ".$lineUserData['sub']."<br>";
-    echo "Line Display Name: ".$lineUserData['name']."<br>";
-    echo '<img style="width:100px;" src="'.$lineUserData['picture'].'" /><br>';
+    // echo "<hr>";
+    // echo "Line UserID: ".$lineUserData['sub']."<br>";
+    // echo "Line Display Name: ".$lineUserData['name']."<br>";
+    // echo '<img style="width:100px;" src="'.$lineUserData['picture'].'" /><br>';
 }
  
  
