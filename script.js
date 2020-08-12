@@ -20,10 +20,10 @@ $(function(){
    
     syncs.on('click', function(){
         var memberID =  $('#member').val();
-        var userID =  $('#userID').val();
+        var userID =  $('#user').val();
         console.log(memberID);
  
-        $.get('sync.php?memberID=' + memberID + '&userID' + userID, function(data){
+        $.get('sync.php?memberID=' + memberID + '&userID=' + userID, function(data){
             var result = JSON.parse(data);
             console.log(data);
             $.each(result, function(index, item){
