@@ -57,8 +57,8 @@ if($LineLogin->verifyToken($accToken)){
 //////////////////////////
 // echo "<hr>";
 // GET LINE USERID FROM USER PROFILE
-//$userID = $LineLogin->userProfile($accToken);
-//echo $userID;
+$userID = $LineLogin->userProfile($accToken);
+echo $userID;
  
 //////////////////////////
 // echo "<hr>";
@@ -89,17 +89,19 @@ if(isset($_SESSION['ses_login_userData_val']) && $_SESSION['ses_login_userData_v
         
     } ?>
      <form>
-    <select name="comp_code" id="compcode" class="form-control">
-        <option value="">เลือกcomp</option>
-        <?php while($result = mysqli_fetch_assoc($query)){ ?>
-            <option value="<?=$result['compcode']?>"><?=$result['company_name']?></option>
-        <?php } ?>
-    </select>
-    <br>
-    <select name="memID" id="member" class="form-control">
-                            <option value="">เลือกอำเภอ</option>
-                        </select>
-                        </form>
+        <select name="comp_code" id="compcode" class="form-control">
+            <option value="">เลือกcomp</option>
+            <?php while($result = mysqli_fetch_assoc($query)){ ?>
+                <option value="<?=$result['compcode']?>"><?=$result['company_name']?></option>
+            <?php } ?>
+        </select>
+        <br>
+        <select name="memID" id="member" class="form-control">
+            <option value="">เลือกอำเภอ</option>
+        </select>
+        <br>
+        <a href='syncmember.php?userid=<?=$lineUserData['sub'];?>' onclick="return confirm('Do you want to delete this record? !!!')">Sync</a>
+    </form>
 <?php 
     // // echo "<tr>";
     // echo "<td>" .$row["compcode"] .  "</td> "; 
@@ -114,7 +116,7 @@ if(isset($_SESSION['ses_login_userData_val']) && $_SESSION['ses_login_userData_v
     
     // echo "</select>";
     
-    echo "<a class='btn btn-success' href='#'>edit</a>";
+    // echo "<a class='btn btn-success' href='#'>edit</a>";
     // echo "</table>";
     //5. close connection
     mysqli_close($conn);
