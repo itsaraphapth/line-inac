@@ -82,17 +82,19 @@ if(isset($_SESSION['ses_login_userData_val']) && $_SESSION['ses_login_userData_v
     $query = "SELECT * FROM company ORDER BY company_id asc" or die("Error:" . mysqli_error()); 
     //3. execute the query. 
     $result = mysqli_query($conn, $query); 
-    //4 . แสดงข้อมูลที่ query ออกมา: 
-    
-    //ใช้ตารางในการจัดข้อมูล
-    // echo "<table border='1' align='center' width='500'>";
-    //หัวข้อตาราง
-    // echo "<tr align='center' bgcolor='#CCCCCC'><td>รหัส</td><td>Uername</td><td>ชื่อ</td><td>นามสกุล</td><td>อีเมล์</td><td>แก้ไข</td><td>ลบ</td></tr>";
-    echo "<select id='compcode' class='form-control'>";
-    while($row = mysqli_fetch_array($result)) { 
-        echo "<option value=".$row["compcode"].">".$row["company_name"] ."</option>";
+   
+    // echo "<select id='compcode' class='form-control'>";
+    // while($row = mysqli_fetch_array($result)) { 
+    //     echo "<option value=".$row["compcode"].">".$row["company_name"] ."</option>";
         
-
+?>
+<select name="comp_code" id="compID" class="form-control">
+                            <option value="">เลือกcomp</option>
+                            <?php while($result = mysqli_fetch_assoc($query)): ?>
+                                <option value="<?=$result['m_code']?>"><?=$result['m_name']?></option>
+                            <?php endwhile; ?>
+                        </select>
+<?php } 
     // // echo "<tr>";
     // echo "<td>" .$row["compcode"] .  "</td> "; 
     // echo "<td>" .$row["company_name"] .  "</td> ";  
@@ -104,15 +106,8 @@ if(isset($_SESSION['ses_login_userData_val']) && $_SESSION['ses_login_userData_v
     // // echo "</tr>";
     }
     
-    echo "</select>";
-    $com = "SELECT * FROM member where compcode = ".$row['compcode']."" or die("Error:" . mysqli_error()); 
-    //3. execute the query. 
-    $res = mysqli_query($con, $com); 
-    echo "<select class='form-control'>";
-    while($rows = mysqli_fetch_array($res)) { 
-        echo "<option value=".$rows["m_code"].">".$rows["m_name"] ."</option>";
-    }
-    echo "</select>";
+    // echo "</select>";
+    
     echo "<a class='btn btn-success' href='#'>edit</a>";
     // echo "</table>";
     //5. close connection
@@ -122,8 +117,6 @@ if(isset($_SESSION['ses_login_userData_val']) && $_SESSION['ses_login_userData_v
     // echo "Line UserID: ".$lineUserData['sub']."<br>";
     // echo "Line Display Name: ".$lineUserData['name']."<br>";
     // echo '<img style="width:100px;" src="'.$lineUserData['picture'].'" /><br>';
-}
- 
  
 echo "<hr>";
 if(isset($_SESSION['ses_login_refreshToken_val']) && $_SESSION['ses_login_refreshToken_val']!=""){
@@ -188,11 +181,9 @@ if(isset($_POST['lineLogout'])){
 }
 ?>
 <script>
-$("#compcode").click(function(){
-    var compcode = $("#compcode").val();
-    console.log(compcode);
     console.log('ddddd');
-});
+</script>
+<script src="script.js"></script>
 </script>
 </body>
 </html>
