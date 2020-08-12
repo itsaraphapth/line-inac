@@ -79,9 +79,9 @@ if(isset($_SESSION['ses_login_userData_val']) && $_SESSION['ses_login_userData_v
     include('connect.php');
 
     //2. query ข้อมูลจากตาราง: 
-    $query = "SELECT * FROM company ORDER BY company_id asc" or die("Error:" . mysqli_error()); 
+    $sql = "SELECT * FROM company ORDER BY company_id asc" or die("Error:" . mysqli_error()); 
     //3. execute the query. 
-    $result = mysqli_query($conn, $query); 
+    $result = mysqli_query($conn, $sql); 
    
     // echo "<select id='compcode' class='form-control'>";
     // while($row = mysqli_fetch_array($result)) { 
