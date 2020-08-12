@@ -9,6 +9,7 @@ $(function(){
  
         $.get('get_member.php?compcode=' + compID, function(data){
             var result = JSON.parse(data);
+            console.log(data);
             $.each(result, function(index, item){
                 memberID.append(
                     $('<option></option>').val(item.m_code).html(item.m_name)
