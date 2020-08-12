@@ -81,7 +81,7 @@ if(isset($_SESSION['ses_login_userData_val']) && $_SESSION['ses_login_userData_v
     //2. query ข้อมูลจากตาราง: 
     $query = "SELECT * FROM company ORDER BY company_id asc" or die("Error:" . mysqli_error()); 
     //3. execute the query. 
-    $result = mysqli_query($con, $query); 
+    $result = mysqli_query($conn, $query); 
     //4 . แสดงข้อมูลที่ query ออกมา: 
     
     //ใช้ตารางในการจัดข้อมูล
