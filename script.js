@@ -10,7 +10,6 @@ $(function(){
  
         $.get('get_member.php?comp_code=' + compID, function(data){
             var result = JSON.parse(data);
-            console.log(data);
             $.each(result, function(index, item){
                 memberID.append(
                     $('<option></option>').val(item.m_code).html(item.m_name)
@@ -20,8 +19,8 @@ $(function(){
     });
    
     syncs.on('click', function(){
-        var compID = $(this).val();
-        console.log(memberID);
+        var compID =  $('#member').val();
+        console.log(compID);
  
         // $.get('get_member.php?comp_code=' + compID, function(data){
         //     var result = JSON.parse(data);
