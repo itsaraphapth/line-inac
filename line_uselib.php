@@ -95,6 +95,7 @@ if(isset($_SESSION['ses_login_userData_val']) && $_SESSION['ses_login_userData_v
             <option value="<?=$result['compcode']?>"><?=$result['company_name']?></option>
         <?php } ?>
     </select>
+    <br>
     <select name="memID" id="member" class="form-control">
                             <option value="">เลือกอำเภอ</option>
                         </select>
@@ -124,13 +125,13 @@ if(isset($_SESSION['ses_login_userData_val']) && $_SESSION['ses_login_userData_v
     // echo '<img style="width:100px;" src="'.$lineUserData['picture'].'" /><br>';
  
 echo "<hr>";
-if(isset($_SESSION['ses_login_refreshToken_val']) && $_SESSION['ses_login_refreshToken_val']!=""){
-    echo '
-    <form method="post">
-    <button type="submit" name="refreshToken">Refresh Access Token</button>
-    </form>   
-    ';  
-}
+// if(isset($_SESSION['ses_login_refreshToken_val']) && $_SESSION['ses_login_refreshToken_val']!=""){
+//     echo '
+//     <form method="post">
+//     <button type="submit" name="refreshToken">Refresh Access Token</button>
+//     </form>   
+//     ';  
+// }
 if(isset($_SESSION['ses_login_refreshToken_val']) && $_SESSION['ses_login_refreshToken_val']!=""){
     if(isset($_POST['refreshToken'])){
         $refreshToken = $_SESSION['ses_login_refreshToken_val'];
