@@ -104,7 +104,7 @@ if(isset($_SESSION['ses_login_userData_val']) && $_SESSION['ses_login_userData_v
     // //ลบข้อมูล
     // echo "<td><a href='UserDelete.php?compcode=$row[0]' onclick=\"return confirm('Do you want to delete this record? !!!')\">del</a></td> ";
     // // echo "</tr>";
-    }
+    // }
     
     // echo "</select>";
     
