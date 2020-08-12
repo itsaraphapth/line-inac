@@ -88,12 +88,7 @@ if(isset($_SESSION['ses_login_userData_val']) && $_SESSION['ses_login_userData_v
     //     echo "<option value=".$row["compcode"].">".$row["company_name"] ."</option>";
         
     } ?>
-<select name="comp_code" id="compID" class="form-control">
-                            <option value="">เลือกcomp</option>
-                            <?php while($result = mysqli_fetch_assoc($query)): ?>
-                                <option value="<?=$result['m_code']?>"><?=$result['m_name']?></option>
-                            <?php endwhile; ?>
-                        </select>
+
 <?php 
     // // echo "<tr>";
     // echo "<td>" .$row["compcode"] .  "</td> "; 
