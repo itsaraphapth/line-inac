@@ -7,7 +7,7 @@ $(function(){
         console.log(compID);
         memberID.html('<option value="">เลือกชื่อ</option>');
  
-        $.get('get_member.php?compcode=' + compID, function(data){
+        $.get('get_member.php?comp_code=' + compID, function(data){
             var result = JSON.parse(data);
             console.log(data);
             $.each(result, function(index, item){
