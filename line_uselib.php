@@ -101,7 +101,7 @@ if(isset($_SESSION['ses_login_userData_val']) && $_SESSION['ses_login_userData_v
             <option value="">เลือกอำเภอ</option>
         </select>
         <br>
-        <a href='syncmember.php?userid=<?=$lineUserData['sub'];?>' onclick="return confirm('Do you want to delete this record? !!!')">Sync</a>
+        <button type="button" id="syncs">Sync</button>
     </form>
 <?php 
     // // echo "<tr>";
